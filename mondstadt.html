@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teyvat Go</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Freeman&family=Inter:wght@500;600;700;800&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="mondstadt.html" class="logo">
+      <svg class="brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#83aae8" />
+            <stop offset="100%" stop-color="#0d3b73" />
+          </linearGradient>
+        </defs>
+        <!-- Left -->
+        <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#forward-icon)" />
+        <!-- Right -->
+        <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#forward-icon)" />
+      </svg>
+      <span class="brand-text">teyvat<span class="brand-highlight">go</span></span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="mondstadt.html">DESTINATIONS</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="about.html#contact" class="btn-contact">CONTACT</a>
+    </nav>  
+  </header>
+
+  <main>
+    <section class="hero-destination">
+        <div class="hero-content">
+            <p class="hero-tagline">"The City of Freedom Expedition"</p>
+            <h1 class="hero-title">MONDSTADT</h1>
+            <p class="hero-duration">Duration: 3 days / 2 nights</p>
+        </div>
+
+        <div class="hero-price">
+            <strong class="price-amount">12,500 PHP</strong>
+            <span class="price-unit">per person</span>
+        </div>
+    </section>
+
+    <section class="about-section">
+    <nav class="sub-nav" aria-label="Mondstadt page sections">
+        <a href="#stops">YOUR STOPS</a>
+        <a href="#experiences">FEATURED EXPERIENCES</a>
+        <a href="#package">PACKAGE DETAILS</a>
+        <a href="#faqs">FAQs</a>
+    </nav>
+
+    <div class="about-container">
+        <div class="about-text">
+        <h2>ABOUT MONDSTADT</h2>
+        <p>
+            Mondstadt, known as the City of Freedom, is a charming destination nestled
+            among rolling hills and vibrant vineyards. Famous for its picturesque
+            windmills and lively festivals, it offers visitors a perfect blend of
+            rich culture and breathtaking natural beauty.
+        </p>
+        <p>
+            Whether you're exploring its historic streets or enjoying local
+            delicacies at cozy taverns, Mondstadt promises an unforgettable travel
+            experience.
+        </p>
+        </div>
+
+        <div class="about-gallery">
+            <figure class="photo-frame photo-back">
+                <div class="photo-inner">
+                    <img src="images/about-mondstadt-1.webp" alt="Bustling plaza and timber buildings inside Mondstadt city" loading="lazy">
+                </div>
+            </figure>
+            <figure class="photo-frame photo-front">
+                <div class="photo-inner">
+                    <img src="images/about-mondstadt-2.webp" alt="Scenic view of Starfell Lake and Statue of The Seven in Mondstadt" loading="lazy">
+                </div>
+            </figure>
+        </div>
+    </div>
+    </section>
+
+    <section class="enjoy-section">
+    <!-- Decorative dashed travel path in background -->
+    <svg class="trail-bg" viewBox="0 0 1200 760" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- Top-right looping trail -->
+        <path d="M695 -10 C680 95, 760 155, 815 110 C855 75, 810 25, 785 75 C755 135, 835 190, 960 165 C1075 140, 1130 55, 1215 70"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-left looping trail -->
+        <path d="M-15 445 C75 405, 145 480, 105 535 C75 575, 25 535, 55 495 C90 450, 175 565, 235 515 C285 470, 225 385, 290 385 C340 385, 345 460, 325 510"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-right looping trail -->
+        <path d="M980 615 C1045 605, 1065 695, 1125 680 C1175 665, 1150 560, 1215 575"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+    </svg>
+
+    <div class="enjoy-container">
+        <h2 class="enjoy-title">You’ll enjoy this trip if...</h2>
+
+        <div class="enjoy-grid">
+        <!-- Card 1 -->
+        <article class="note-card card-1">
+            <span class="tape" aria-hidden="true"></span>
+            <svg class="note-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M11 6H25L23.8 15.2C23.4 18.5 20.8 21 18 21C15.2 21 12.6 18.5 12.2 15.2L11 6Z" stroke="#6791d4" stroke-width="2.4" stroke-linejoin="round" />
+            <path d="M11.6 12H24.4" stroke="#6791d4" stroke-width="2.2" />
+            <path d="M18 21V29M13 29H23" stroke="#6791d4" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+            <p>
+            <strong>You love good food and drinks</strong> and want to spend your
+            evenings enjoying famous wines, refreshing ciders, and hearty local
+            dishes.
+            </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="note-card card-2">
+            <span class="tape" aria-hidden="true"></span>
+            <svg class="note-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M9 14V8H12.5V11H16V8H20V11H23.5V8H27V14L25 16.5V28H11V16.5L9 14Z" stroke="#6791d4" stroke-width="2.4" stroke-linejoin="round" />
+            <path d="M15.5 28V22.5C15.5 21.1 16.6 20 18 20C19.4 20 20.5 21.1 20.5 22.5V28" stroke="#6791d4" stroke-width="2.3" />
+            </svg>
+            <p>
+            <strong>You've always dreamed of visiting a fantasy city</strong>
+            filled with windmills, medieval architecture, flower-covered streets,
+            and cozy taverns.
+            </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="note-card card-3">
+            <span class="tape" aria-hidden="true"></span>
+            <svg class="note-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M5 27L14.5 14L20.5 22L24.5 17L31 27H5Z" stroke="#6791d4" stroke-width="2.4" stroke-linejoin="round" />
+            <circle cx="25.5" cy="10.5" r="2.5" stroke="#6791d4" stroke-width="2.2" />
+            </svg>
+            <p>
+            <strong>You can't resist beautiful scenery</strong>, from towering
+            cliffs and crystal-clear lakes to ancient trees and breathtaking
+            sunsets.
+            </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="note-card card-4">
+            <span class="tape" aria-hidden="true"></span>
+            <svg class="note-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M14 25V10L27 7.5V22.5" stroke="#6791d4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="11" cy="25" r="3" stroke="#6791d4" stroke-width="2.4" />
+            <circle cx="24" cy="22.5" r="3" stroke="#6791d4" stroke-width="2.4" />
+            </svg>
+            <p>
+            <strong>You enjoy music, festivals, and lively cultures</strong> where
+            every celebration is filled with songs, laughter, and unforgettable
+            memories.
+            </p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="note-card card-5">
+            <span class="tape" aria-hidden="true"></span>
+            <svg class="note-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M15 7L17.2 13.8L24 16L17.2 18.2L15 25L12.8 18.2L6 16L12.8 13.8L15 7Z" stroke="#6791d4" stroke-width="2.3" stroke-linejoin="round" />
+            <path d="M25.5 20L26.8 23.7L30.5 25L26.8 26.3L25.5 30L24.2 26.3L20.5 25L24.2 23.7L25.5 20Z" stroke="#6791d4" stroke-width="2.2" stroke-linejoin="round" />
+            </svg>
+            <p>
+            <strong>You value freedom and adventure</strong> and want a vacation
+            where you can wander wherever the wind takes you, discovering stories
+            and surprises along the way.
+            </p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <section id="stops" class="stops-section">
+    <header class="stops-header">
+        <h2>YOUR STOPS</h2>
+        <p>A closer look at the destinations waiting for you on this expedition.</p>
+    </header>
+
+    <div class="stops-list">
+        <!-- Stop 1: Cider Lake (Text Left, Image Right) -->
+        <article class="stop-row">
+        <div class="stop-text">
+            <h3>CIDER LAKE</h3>
+            <p>
+            Surrounding the City of Mondstadt with its crystal-clear waters, Cider
+            Lake is the perfect destination for travelers seeking both relaxation
+            and adventure. Stroll along its scenic shores, fish for local catches,
+            or capture stunning photos of Mondstadt reflected on the water's
+            surface. As the sun sets, the lake transforms into a shimmering
+            masterpiece of gold and blue, creating a view you'll never forget.
+            Every breeze across Cider Lake feels like an invitation to start your
+            next adventure.
+            </p>
+        </div>
+        <div class="stop-media">
+            <img src="images/cider-lake.webp" alt="Crystal-clear waters of Cider Lake surrounding Mondstadt" loading="lazy">
+        </div>
+        </article>
+
+        <!-- Stop 2: Windrise (Image Left, Text Right) -->
+        <article class="stop-row reverse">
+        <div class="stop-media">
+            <img src="images/windrise.webp" alt="Giant sacred oak tree and green meadows at Windrise" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>WINDRISE</h3>
+            <p>
+            Step into a place where legends come alive beneath the branches of the
+            iconic giant tree at Windrise. Surrounded by vast green fields and
+            vibrant wildflowers, this magical location offers the perfect setting
+            for exploration, sightseeing, and unforgettable photographs. Many
+            believe the winds here carry stories from Mondstadt's past, making
+            every visit feel like part of a grand journey. Whether you're enjoying
+            a peaceful picnic or simply taking in the breathtaking scenery,
+            Windrise is guaranteed to leave you in awe.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 3: Cathedral of Mondstadt (Text Left, Image Right) -->
+        <article class="stop-row">
+        <div class="stop-text">
+            <h3>CATHEDRAL OF<br>MONDSTADT</h3>
+            <p>
+            Rising high above the City of Freedom, the Cathedral of Mondstadt is a
+            breathtaking landmark that combines history, culture, and magnificent
+            architecture. Marvel at its towering spires, colorful stained-glass
+            windows, and grand interior while learning about the stories that
+            shaped Mondstadt. Climb nearby viewpoints for spectacular city
+            panoramas or soak in the peaceful atmosphere that draws visitors from
+            across Teyvat.
+            </p>
+        </div>
+        <div class="stop-media">
+            <img src="images/cathedral-of-mondstadt.webp" alt="Twin spires and stone facade of the Cathedral of Mondstadt" loading="lazy">
+        </div>
+        </article>
+    </div>
+    </section>
+
+    <section id="package" class="package-section">
+    <div class="package-container">
+        <!-- Inclusions & Exclusions Postage-Stamp Cards -->
+        <div class="stamp-grid">
+        <article class="stamp-card">
+            <h2>INCLUSIONS</h2>
+            <ul>
+            <li>
+                2 nights standard inn accommodation in Mondstadt City with daily
+                breakfast
+            </li>
+            <li>
+                Guided walking and carriage tours to Cider Lake, Windrise, and the
+                Cathedral of Mondstadt
+            </li>
+            <li>
+                Welcome tasting platter at a local Mondstadt tavern
+            </li>
+            <li>
+                Regional travel permits and licensed Mondstadt Branch tour guide
+            </li>
+            </ul>
+        </article>
+
+        <article class="stamp-card">
+            <h2>EXCLUSIONS</h2>
+            <ul>
+            <li>
+                Cross-border transit to and from Mondstadt City
+            </li>
+            <li>
+                Lunches, dinners, and specialty beverages not listed in the itinerary
+            </li>
+            <li>
+                Personal souvenirs, Gliding License fees, and travel insurance
+                (required)
+            </li>
+            </ul>
+        </article>
+        </div>
+
+        <!-- Sample Itinerary -->
+        <div class="itinerary-block">
+        <h2 class="itinerary-title">SAMPLE ITINERARY</h2>
+
+        <div class="itinerary-grid">
+            <article class="itinerary-item day-1">
+            <h3>DAY 1 - Arrival &amp; Cider Lake Promenade</h3>
+            <p>
+                Check-in at Mondstadt City Branch, orientation briefing, afternoon
+                lakeside walk along Cider Lake, and welcome tavern tasting platter.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-2">
+            <h3>DAY 2 - Windrise &amp; Historic Stone Landmarks</h3>
+            <p>
+                Morning carriage tour to Windrise and the Great Oak, afternoon
+                architectural tour of the Cathedral of Mondstadt, and free evening
+                at the plaza.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-3">
+            <h3>DAY 3 - Morning Market &amp; Departure</h3>
+            <p>
+                Breakfast at the inn, free time for local souvenirs, and checkout at
+                Mondstadt City.
+            </p>
+            </article>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Ready to Explore CTA Banner -->
+    <section class="booking-cta">
+    <div class="booking-container">
+        <h2 class="booking-title">READY TO EXPLORE MONDSTADT?</h2>
+
+        <div class="booking-card">
+        <div class="booking-details">
+            <p>Base price: <span>12,500 PHP per person</span></p>
+            <p>Duration: <span>3 days / 2 nights</span></p>
+            <p>Package code: <span>MOND-01</span></p>
+        </div>
+
+        <a href="#book" class="btn-book">BOOK NOW</a>
+        </div>
+    </div>
+
+    <!-- Torn paper edge transitioning into the navy FAQ section below -->
+    <img src="images/torn-divider.webp" alt="" class="torn-divider" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section id="faqs" class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-list">
+        <details class="faq-item">
+            <summary>
+            <span>What should I wear for the Mondstadt tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Wear comfortable walking shoes and breathable layered clothing.
+                Breezes around Cider Lake and Windrise can get cool in the late
+                afternoon, so a light jacket is recommended.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>What should I bring with me?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Bring valid identification, a refillable water bottle, sun
+                protection, a camera, and extra Mora for personal souvenirs or
+                tavern snacks not covered in the package.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Is the tour suitable for families and children?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Yes. The itinerary is family-friendly with relaxed pacing, scenic
+                carriage rides to Windrise, and plenty of rest stops in Mondstadt
+                City.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>How much walking is involved?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Expect light to moderate walking through cobblestone city streets,
+                lakeside paths, and steps leading up to the Cathedral of Mondstadt.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Can I explore on my own during the trip?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Yes. Free time is built into the Day 2 evening plaza visit and Day 3
+                morning market so you can browse shops and taverns at your own pace.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Are there any rules or protocols I should follow during the tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Please stay with your licensed Mondstadt Branch guide during group
+                transfers, follow local Knights of Favonius guidelines, and hold a
+                valid Gliding License if you plan to glide within city limits.
+            </p>
+            </div>
+        </details>
+        </div>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Contact Info -->
+      <div class="footer-brand-col">
+        <a href="mondstadt.html" class="footer-logo">
+          <svg class="footer-brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#83aae8" />
+                <stop offset="100%" stop-color="#0d3b73" />
+              </linearGradient>
+            </defs>
+            <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+            <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+          </svg>
+          <span class="footer-brand-text">teyvat<span class="brand-highlight">go</span></span>
+        </a>
+
+        <div class="footer-contact">
+          <p>Tel : 09451236789</p>
+          <p>Email : teyvatgo@gmail.com</p>
+          <p>Address : West Wind Boulevard, Knights<br>Quarter, Mondstadt City, Teyvat 1001</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="footer-links-col">
+        <h3>DESTINATIONS</h3>
+        <ul>
+          <li><a href="mondstadt.html">MONDSTADT</a></li>
+          <li><a href="#liyue">LIYUE</a></li>
+          <li><a href="#inazuma">INAZUMA</a></li>
+          <li><a href="#sumeru">SUMERU</a></li>
+          <li><a href="#fontaine">FONTAINE</a></li>
+          <li><a href="#natlan">NATLAN</a></li>
+          <li><a href="#snezhnaya">SNEZHNAYA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company Links & Social Media -->
+      <div class="footer-social-col">
+        <ul class="footer-primary-links">
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="about.html#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="footer-connect">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#facebook" aria-label="Teyvat Go on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#instagram" aria-label="Teyvat Go on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="#tiktok" aria-label="Teyvat Go on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved | Teyvat Go</p>
+    </div>
+  </footer>
+</body>
+
+</html>
