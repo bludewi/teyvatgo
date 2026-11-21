@@ -55,6 +55,19 @@ button:focus-visible {
    HEADER & NAVIGATION
    ======================== */
 
+main {
+  padding-top: 0;
+}
+
+.header-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--color-white);
+}
+
 /* Navbar Layout */
 .navbar {
   background-color: var(--color-header-bg);
@@ -211,12 +224,20 @@ button:focus-visible {
 
 /* Sub-Navigation Bar */
 .sub-nav {
+  position: sticky;
+  top: 4.25rem;
+  z-index: 900;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 2.5rem;
-  margin-bottom: 4.5rem;
+
+  background: var(--color-white);
+  padding: 0.8rem 0;
+
+  margin: 0;
+  border-top: 0;
 }
 
 .sub-nav a {
@@ -1709,6 +1730,10 @@ button:focus-visible {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 1.25rem;
+  }
+
+  .sub-nav {
+    top: 7.5rem;
   }
 
   .nav-links {
