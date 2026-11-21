@@ -254,6 +254,13 @@ main {
   opacity: 0.7;
 }
 
+#experiences,
+#package,
+#stops,
+#faqs {
+  scroll-margin-top: 8.25rem;
+}
+
 /* About Description Column */
 .about-container {
   max-width: 68rem;
@@ -1734,6 +1741,13 @@ main {
 
   .sub-nav {
     top: 7.5rem;
+  }
+
+  #experiences,
+  #package,
+  #stops,
+  #faqs {
+    scroll-margin-top: 11.5rem;
   }
 
   .nav-links {
