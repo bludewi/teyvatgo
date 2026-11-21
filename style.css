@@ -1257,7 +1257,7 @@ main {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  background-color: #d9d9d9;
+  background-color: #ffffff;
   border: none;
   padding: 0.85rem 1rem;
   font-family: 'Inter', system-ui, sans-serif;
