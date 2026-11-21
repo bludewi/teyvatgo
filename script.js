@@ -47,6 +47,16 @@ if (tripCard) {
       link: '#sumeru'
     },
     {
+      nation: 'fontaine',
+      heading: 'Fontaine / FONT-01',
+      price: '20,000 PHP per person',
+      duration: '5 days / 4 nights',
+      stops: 'Court of Fontaine, Opera Epiclese, Lucine Fountain',
+      image: 'images/package-fontaine.webp',
+      alt: 'Elegant waterways and architecture of Fontaine',
+      link: '#fontaine'
+    },
+    {
       nation: 'natlan',
       heading: 'Natlan / NATL-01',
       price: '17,200 PHP per person',
