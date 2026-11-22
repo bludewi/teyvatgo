@@ -165,6 +165,10 @@ main {
   background: url('images/hero-inazuma.webp') center / cover no-repeat;
 }
 
+.hero-destination.hero-sumeru {
+  background: url('images/hero-sumeru.webp') center / cover no-repeat;
+}
+
 /* Hero Text Content */
 .hero-content {
   max-width: 50rem;
