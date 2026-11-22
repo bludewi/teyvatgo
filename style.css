@@ -161,6 +161,10 @@ main {
   background: url('images/liyue-hero.jpg') center / cover no-repeat;
 }
 
+.hero-destination.hero-inazuma {
+  background: url('images/hero-inazuma.webp') center / cover no-repeat;
+}
+
 /* Hero Text Content */
 .hero-content {
   max-width: 50rem;
