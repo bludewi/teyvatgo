@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Teyvat Go</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Freeman&family=Inter:wght@500;600;700;800&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header-wrapper">
+    <header class="navbar">
+      <a href="mondstadt.html" class="logo">
+        <svg class="brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#83aae8" />
+              <stop offset="100%" stop-color="#0d3b73" />
+            </linearGradient>
+          </defs>
+          <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#forward-icon)" />
+          <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#forward-icon)" />
+        </svg>
+        <span class="brand-text">teyvat<span class="brand-highlight">go</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="mondstadt.html">DESTINATIONS</a>
+        <a href="about.html" aria-current="page">ABOUT US</a>
+        <a href="#contact" class="btn-contact">CONTACT</a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <!-- About Us Hero Section -->
+    <section class="hero-about">
+      <div class="hero-about-content">
+        <h1 class="hero-about-title">Travel With Teyvat Go</h1>
+        <p class="hero-about-text">
+          Teyvat Go is a travel agency built on firsthand knowledge of all seven
+          nations. Our itineraries are built on firsthand knowledge of each
+          destination, giving travelers a reliable and well-planned way to
+          experience the region. We serve travelers of all experience levels,
+          from first-time visitors to seasoned explorers.
+        </p>
+        <a href="#trips" class="btn-hero-pill">Explore All Packages</a>
+      </div>
+    </section>
+
+    <!-- Our Journey Across Teyvat Section -->
+    <section class="journey-section">
+      <div class="journey-container">
+        <h2 class="journey-title">Our Journey Across Teyvat</h2>
+
+        <div class="journey-story">
+          <p>
+            What began as one traveler's dream to explore every corner of Teyvat
+            soon became a passion for sharing those adventures with others. From
+            the wind-swept plains of Mondstadt and the bustling harbors of Liyue
+            to the electrifying streets of Inazuma, every nation offered
+            unforgettable stories, cultures, and experiences that deserved to be
+            discovered.
+          </p>
+          <p>
+            Inspired by these journeys, TeyvatGo was created to help fellow
+            adventurers experience the wonders of Teyvat in a deeper and more
+            meaningful way. We believe travel is more than reaching a destination.
+            It's about tasting local delicacies, meeting remarkable people,
+            uncovering hidden gems, and creating memories that last a lifetime.
+          </p>
+          <p>
+            Today, our mission remains simple: to turn every trip into an
+            unforgettable adventure. Whether you're taking your first journey or
+            embarking on your hundredth, we're here to guide you through the
+            beauty, culture, and magic that make every nation in Teyvat unique.
+          </p>
+        </div>
+
+        <div class="journey-gallery">
+          <figure class="journey-frame frame-left">
+            <div class="photo-inner">
+              <img src="images/journey-1.webp" alt="Aerial view of Starfell Lake and Statue of The Seven in Mondstadt" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="journey-frame frame-center">
+            <div class="photo-inner">
+              <img src="images/journey-2.webp" alt="Lush forest waterfall cascading into a clear pool in Teyvat" loading="lazy">
+            </div>
+          </figure>
+
+          <figure class="journey-frame frame-right">
+            <div class="photo-inner">
+              <img src="images/journey-3.webp" alt="Panoramic view of Cider Lake and distant cliffs" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Which Trip Calls You? Section -->
+    <section id="trips" class="trips-section">
+      <div class="trips-container">
+        <h2 class="trips-title">Which Trip Calls You?</h2>
+
+        <!-- Nation Filter Pills -->
+        <div class="trip-filters" role="tablist" aria-label="Filter packages by nation">
+          <button type="button" class="filter-pill active" data-filter="all">All</button>
+          <button type="button" class="filter-pill" data-filter="mondstadt">Mondstadt</button>
+          <button type="button" class="filter-pill" data-filter="liyue">Liyue</button>
+          <button type="button" class="filter-pill" data-filter="inazuma">Inazuma</button>
+          <button type="button" class="filter-pill" data-filter="sumeru">Sumeru</button>
+          <button type="button" class="filter-pill" data-filter="fontaine">Fontaine</button>
+          <button type="button" class="filter-pill" data-filter="natlan">Natlan</button>
+          <button type="button" class="filter-pill" data-filter="snezhnaya">Snezhnaya</button>
+        </div>
+
+        <!-- Package Carousel -->
+        <div class="trip-carousel">
+          <button type="button" class="carousel-arrow" id="prev-trip" aria-label="Previous trip">&lt;</button>
+
+          <article class="trip-card" id="trip-card">
+            <div class="trip-media">
+              <img id="trip-img" src="images/package-mondstadt.webp" alt="View of Mondstadt City across Cider Lake">
+            </div>
+
+            <div class="trip-info">
+              <h3 id="trip-heading">Mondstadt / MOND-01</h3>
+
+              <div class="trip-specs">
+                <p>Base price: <span id="trip-price">12,500 PHP per person</span></p>
+                <p>Duration: <span id="trip-duration">3 days / 2 nights</span></p>
+                <p>Stops: <span id="trip-stops">Cider Lake, Windrise, Cathedral</span></p>
+              </div>
+
+              <div class="trip-actions">
+                <a href="mondstadt.html" id="trip-view-btn" class="btn-trip-view">View More</a>
+                <a href="mondstadt.html#book" id="trip-book-btn" class="btn-trip-book">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <button type="button" class="carousel-arrow" id="next-trip" aria-label="Next trip">&gt;</button>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="trip-dots" id="trip-dots" aria-label="Trip slide indicators">
+          <button type="button" class="trip-dot active" data-index="0" aria-label="Slide 1: Mondstadt"></button>
+          <button type="button" class="trip-dot" data-index="1" aria-label="Slide 2: Liyue"></button>
+          <button type="button" class="trip-dot" data-index="2" aria-label="Slide 3: Inazuma"></button>
+          <button type="button" class="trip-dot" data-index="3" aria-label="Slide 4: Sumeru"></button>
+          <button type="button" class="trip-dot" data-index="4" aria-label="Slide 5: Fontaine"></button>
+          <button type="button" class="trip-dot" data-index="5" aria-label="Slide 6: Natlan"></button>
+          <button type="button" class="trip-dot" data-index="6" aria-label="Slide 7: Snezhnaya"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Question / Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <header class="contact-header">
+          <h2>Have a quick question?</h2>
+          <p>
+            Need more information about our tours, packages, or destinations?
+            Our team is ready to help you plan the perfect journey across Teyvat.
+          </p>
+        </header>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Ex. Jane" required>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Ex. Smith" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is your concern?" required>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="comments">Comments and Questions</label>
+              <textarea id="comments" name="comments" placeholder="Ask your question here...." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- The Traveler Behind Teyvat Go Section -->
+    <section class="founder-section">
+      <div class="founder-container">
+        <div class="founder-text">
+          <h2>The Traveler Behind<br>Teyvat Go</h2>
+          <p>
+            “I’ve always believed that the best way to understand Teyvat is to
+            experience it firsthand. Over the years, I’ve traveled across all
+            seven nations, exploring famous landmarks, discovering hidden gems,
+            tasting local cuisines, and learning about the unique cultures that
+            make each region special. Along the way, I realized that these
+            incredible experiences were too good to keep to myself, so I created
+            TeyvatGo to share them with fellow adventurers. Every travel package
+            we offer is inspired by places I’ve personally explored, carefully
+            designed to help you experience the beauty, wonder, and unforgettable
+            moments that made me fall in love with Teyvat.”
+          </p>
+        </div>
+
+        <figure class="founder-profile">
+          <img src="images/alhaitham.webp" alt="Chibi backpacker avatar representing Alhaitham" loading="lazy">
+          <figcaption>Alhaitham</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Contact Info -->
+      <div class="footer-brand-col">
+        <a href="mondstadt.html" class="footer-logo">
+          <svg class="footer-brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#83aae8" />
+                <stop offset="100%" stop-color="#0d3b73" />
+              </linearGradient>
+            </defs>
+            <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+            <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+          </svg>
+          <span class="footer-brand-text">teyvat<span class="brand-highlight">go</span></span>
+        </a>
+
+        <div class="footer-contact">
+          <p>Tel : 09451236789</p>
+          <p>Email : teyvatgo@gmail.com</p>
+          <p>Address : West Wind Boulevard, Knights<br>Quarter, Mondstadt City, Teyvat 1001</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="footer-links-col">
+        <h3>DESTINATIONS</h3>
+        <ul>
+          <li><a href="mondstadt.html">MONDSTADT</a></li>
+          <li><a href="#liyue">LIYUE</a></li>
+          <li><a href="#inazuma">INAZUMA</a></li>
+          <li><a href="#sumeru">SUMERU</a></li>
+          <li><a href="#fontaine">FONTAINE</a></li>
+          <li><a href="#natlan">NATLAN</a></li>
+          <li><a href="#snezhnaya">SNEZHNAYA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company Links & Social Media -->
+      <div class="footer-social-col">
+        <ul class="footer-primary-links">
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="footer-connect">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#facebook" aria-label="Teyvat Go on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#instagram" aria-label="Teyvat Go on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="#tiktok" aria-label="Teyvat Go on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved | Teyvat Go</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
