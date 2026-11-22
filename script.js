@@ -12,69 +12,69 @@ if (tripCard) {
       price: '12,500 PHP per person',
       duration: '3 days / 2 nights',
       stops: 'Cider Lake, Windrise, Cathedral',
-      image: 'images/package-mondstadt.webp',
+      image: 'images/mondstadt-hero.webp',
       alt: 'View of Mondstadt City across Cider Lake',
       link: 'mondstadt.html'
     },
     {
       nation: 'liyue',
-      heading: 'Liyue / LIYU-01',
-      price: '14,800 PHP per person',
+      heading: 'Liyue / LIYUE-02',
+      price: '15,000 PHP per person',
       duration: '4 days / 3 nights',
-      stops: 'Liyue Harbor, Wangshu Inn, Jueyun Karst',
-      image: 'images/package-liyue.webp',
+      stops: 'Liyue Harbor, Mt. Aocang, Wangshu Inn',
+      image: 'images/liyue-hero.jpg',
       alt: 'Golden lanterns and cliffs of Liyue Harbor',
-      link: '#liyue'
+      link: 'liyue.html'
     },
     {
       nation: 'inazuma',
-      heading: 'Inazuma / INAZ-01',
-      price: '16,500 PHP per person',
+      heading: 'Inazuma / INAZ-03',
+      price: '18,000 PHP per person',
       duration: '4 days / 3 nights',
-      stops: 'Inazuma City, Grand Narukami Shrine, Chinju Forest',
-      image: 'images/package-inazuma.webp',
+      stops: 'Nakurami Grand Shrine, Ritou Trading Port, Tenshukaku',
+      image: 'images/hero-inazuma.webp',
       alt: 'Sacred Sakura and purple torii gates in Inazuma',
-      link: '#inazuma'
+      link: 'inazuma.html'
     },
     {
       nation: 'sumeru',
-      heading: 'Sumeru / SUME-01',
-      price: '15,900 PHP per person',
-      duration: '4 days / 3 nights',
-      stops: 'Sumeru City, Gandharva Ville, Port Ormos',
-      image: 'images/package-sumeru.webp',
+      heading: 'Sumeru / SUME-04',
+      price: '14,000 PHP per person',
+      duration: '3 days / 3 nights',
+      stops: 'Sumeru City Academy, Gandharva Village, Caravan Ribat',
+      image: 'images/hero-sumeru.webp',
       alt: 'Giant treehouse architecture of Sumeru City',
-      link: '#sumeru'
+      link: 'sumeru.html'
     },
     {
       nation: 'fontaine',
-      heading: 'Fontaine / FONT-01',
+      heading: 'Fontaine / FONT-05',
       price: '20,000 PHP per person',
       duration: '5 days / 4 nights',
       stops: 'Court of Fontaine, Opera Epiclese, Lucine Fountain',
-      image: 'images/package-fontaine.webp',
+      image: 'images/hero-fontaine.webp',
       alt: 'Elegant waterways and architecture of Fontaine',
-      link: '#fontaine'
+      link: 'fontaine.html'
     },
     {
       nation: 'natlan',
-      heading: 'Natlan / NATL-01',
-      price: '17,200 PHP per person',
+      heading: 'Natlan / NATL-06',
+      price: '16,500 PHP per person',
       duration: '4 days / 3 nights',
-      stops: 'Stadium of the Sacred Flame, People of the Springs',
-      image: 'images/package-natlan.webp',
+      stops: 'Tepecac Stadium, Children of the Echoes Canyon, People of the Springs',
+      image: 'images/hero-natlan.webp',
       alt: 'Vibrant canyons and hot springs of Natlan',
-      link: '#natlan'
+      link: 'natlan.html'
     },
     {
       nation: 'snezhnaya',
-      heading: 'Snezhnaya / SNEZ-01',
-      price: '19,500 PHP per person',
+      heading: 'Snezhnaya / SNEZ-07',
+      price: '22,000 PHP per person',
       duration: '5 days / 4 nights',
-      stops: 'Zapolyarny Palace, Frostwinter Harbor, Pine Ridge',
-      image: 'images/package-snezhnaya.webp',
+      stops: 'Zapolyarny Palace Outskirts, Frost-bound Valleys, Glacial Outposts',
+      image: 'images/hero-snezhnaya.png',
       alt: 'Snow-covered palaces and northern lights of Snezhnaya',
-      link: '#snezhnaya'
+      link: 'snezhnaya.html'
     }
   ];
 
