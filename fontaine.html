@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teyvat Go</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Freeman&family=Inter:wght@500;600;700;800&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="header-wrapper">
+    <header class="navbar">
+      <a href="mondstadt.html" class="logo">
+        <svg class="brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#83aae8" />
+              <stop offset="100%" stop-color="#0d3b73" />
+            </linearGradient>
+          </defs>
+          <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#forward-icon)" />
+          <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#forward-icon)" />
+        </svg>
+        <span class="brand-text">teyvat<span class="brand-highlight">go</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="mondstadt.html">DESTINATIONS</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="about.html#contact" class="btn-contact">CONTACT</a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <section class="hero-destination hero-fontaine">
+        <div class="hero-content">
+            <p class="hero-tagline">"The Capital of Justice, Steam, and Aquanics"</p>
+            <h1 class="hero-title">FONTAINE</h1>
+            <p class="hero-duration">Duration: 5 days / 4 nights</p>
+        </div>
+
+        <div class="hero-price">
+            <strong class="price-amount">20,000 PHP</strong>
+            <span class="price-unit">per person</span>
+        </div>
+    </section>
+
+    <nav class="sub-nav" aria-label="Fontaine page sections">
+      <a href="#stops">YOUR STOPS</a>
+      <a href="#experiences">FEATURED EXPERIENCES</a>
+      <a href="#package">PACKAGE DETAILS</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+
+    <section class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+        <h2>ABOUT FONTAINE</h2>
+        <p>
+           Fontaine, known as the Nation of Justice, is an enchanting hub of art, high fashion, and clockwork engineering surrounded by pristine waters. Renowned for its grand European-inspired boulevards, elevated water-canal trams, and thriving theatrical culture, it offers travelers a sophisticated and picturesque escape. From sparkling fountains to bustling waterfront cafés, every corner of Fontaine celebrates elegance, innovation, and spectacle.
+        </p>
+        </div>
+
+        <div class="about-gallery">
+            <figure class="photo-frame photo-back">
+                <div class="photo-inner">
+                    <img src="images/about-fontaine.webp" alt="Fontaine cityscape" loading="lazy">
+                </div>
+            </figure>
+            <figure class="photo-frame photo-front">
+                <div class="photo-inner">
+                    <img src="images/about-fontaine(1).webp" alt="Fontaine skyline" loading="lazy">
+                </div>
+            </figure>
+        </div>
+    </div>
+    </section>
+
+    <section class="enjoy-section">
+    <!-- Decorative dashed travel path in background -->
+    <svg class="trail-bg" viewBox="0 0 1200 760" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- Top-right looping trail -->
+        <path d="M695 -10 C680 95, 760 155, 815 110 C855 75, 810 25, 785 75 C755 135, 835 190, 960 165 C1075 140, 1130 55, 1215 70"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-left looping trail -->
+        <path d="M-15 445 C75 405, 145 480, 105 535 C75 575, 25 535, 55 495 C90 450, 175 565, 235 515 C285 470, 225 385, 290 385 C340 385, 345 460, 325 510"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-right looping trail -->
+        <path d="M980 615 C1045 605, 1065 695, 1125 680 C1175 665, 1150 560, 1215 575"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+    </svg>
+
+    <div class="enjoy-container">
+        <h2 class="enjoy-title">You’ll enjoy this trip if...</h2>
+
+        <div class="enjoy-grid">
+        <!-- Card 1 -->
+        <article class="note-card card-1">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/uix-sharp--pin-theatre.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You appreciate art, theater, music, and grand performances</strong> that turn everyday life into a spectacle.
+            </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="note-card card-2">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/bi--gear-wide-connected.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You are fascinated by technology, innovation, and inventions</strong> that push the boundaries of what's possible.
+            </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="note-card card-3">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/mdi--fountain.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You love beautiful waterfront cities</strong> filled with fountains, canals, and stunning architecture.
+            </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="note-card card-4">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/uix-sharp--pin-cafe.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You enjoy sophisticated urban experiences, stylish cafés</strong>, and refined cultural attractions.
+            </p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="note-card card-5">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/material-symbols--mystery.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You can't resist a good mystery</strong> and find courtroom drama and detective stories endlessly entertaining.
+            </p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <section id="stops" class="stops-section">
+    <header class="stops-header">
+        <h2>YOUR STOPS</h2>
+        <p>A closer look at the destinations waiting for you on this expedition.</p>
+    </header>
+
+    <div class="stops-list">
+        <!-- Stop 1: Court of Fontaine -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/court-of-fontaine.png" alt="Court of Fontaine" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>COURT OF FONTAINE</h3>
+            <p>
+               Surrounded by crystal-clear waterways and elevated Aquabus lines, the Court of Fontaine dazzles visitors with its grand stone arcades, boutique shops, and intricate clockwork marvels. Stroll down the sunlit Vasari Passage, enjoy freshly baked pastries at a sidewalk café, or watch friendly clockwork automatons patrol the clean avenues. As evening falls, warm streetlights illuminate the brass fixtures and shimmering canals across the city. Every moment in the capital feels like stepping into a living work of art.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 2: Opera Epiclese -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/opera-epiclese.webp" alt="Opera Epiclese" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>OPERA EPICLESE</h3>
+            <p>
+               Situated across the water on Erinnyes Island, the Opera Epiclese is a breathtaking monument to Fontainian architecture, performing arts, and civic drama. Marvel at its soaring vaulted ceilings, ornate stained-glass windows, and stately marble plaza overlooking the surrounding coastline. Guided tours allow travelers to explore the grand foyer and learn about the iconic performances and historic trials held within its walls. The sheer scale and elegance of the venue leave every visitor in awe.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 3: Lucine Fountain -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/lucine-fountain.png" alt="Lucine Fountain" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>LUCINE FOUNTAIN</h3>
+            <p>
+               Framed by manicured gardens and flowing waterways just outside the opera house, the Lucine Fountain is one of Fontaine's most beloved scenic landmarks. Walk along the circular stone promenade, toss a coin into the sparkling waters, and capture stunning photographs with the grand spires of the island rising behind you. Gentle water sprays cool the afternoon air while visitors gather to relax and enjoy the peaceful ambiance. It is a must-visit spot for travelers seeking quiet beauty and timeless charm.
+        </div>
+        </article>
+    </div>
+    </section>
+
+    <section class="package-section">
+    <div class="package-container">
+        <!-- Inclusions & Exclusions Postage-Stamp Cards -->
+        <div id="experiences" class="stamp-grid">
+        <article class="stamp-card">
+            <h2>INCLUSIONS</h2>
+            <ul>
+            <li>
+                5 days /4 nights boutique hotel accommodation in the Court of Fontaine with daily breakfast
+            </li>
+            <li>
+                Guided city and Aquabus (elevated water-canal tram) tours to Court of Fontaine, Opera Epiclese, and Lucine Fountain
+            </li>
+            <li>
+               Welcome Fontainian pastry and afternoon tea service
+            </li>
+            <li>
+                Aquabus (water-canal tram) transit passes and licensed Court of Fontaine branch tour guide
+            </li>
+            </ul>
+        </article>
+
+        <article class="stamp-card">
+            <h2>EXCLUSIONS</h2>
+            <ul>
+            <li>
+                Cross-border transit to and from Court of Fontaine
+                </li>
+            <li>
+                Lunches, dinners, and specialty beverages not listed in the itinerary
+            </li>
+            <li>
+                Personal souvenirs, evening opera performance tickets, and travel insurance (required)
+            </li>
+            </ul>
+        </article>
+        </div>
+
+        <!-- Sample Itinerary -->
+        <div class="itinerary-block">
+        <h2 class="itinerary-title">SAMPLE ITINERARY</h2>
+
+        <div class="itinerary-grid">
+            <article class="itinerary-item day-1">
+            <h3>DAY 1 - Arrival & Cour of Fontaine</h3>
+            <p>
+                Check-in at Court of Fontaine HQ, orientation briefing, afternoon stroll along the Vasari Passage (covered shopping arcade) and clockwork workshops, and welcome pastry and tea service.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-2">
+            <h3>DAY 2 - Aquabus & Opera Epiclese</h3>
+            <p>
+               Morning scenic Aquabus (elevated water-canal tram) ride along the Clementine Line (canal transit route), guided architectural tour of the grand Opera Epiclese, and free afternoon by the waterfront.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-3">
+            <h3>DAY 3 - Fountain of Lucine & Erinnyes Promenade</h3>
+            <p>
+               Morning visit to the Lucine Fountain plaza, guided tour of Fontainian hydro-engineering (water-powered machinery) landmarks, and evening gallery walk.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-4">
+            <h3>DAY 4 - Palais Mermonia & Leisure Day</h3>
+            <p>
+                Morning exterior tour of Palais Mermonia (city administrative palace) and the Quartier Lyonnais (artisan quarter), followed by a free afternoon for boutique shopping and café dining.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-5">
+            <h3>DAY 5 - Morning Boulevard & Departure</h3>
+            <p>
+                Breakfast at the hotel, final morning walk along the main promenade for souvenirs, and checkout.
+            </p>
+            </article>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Ready to Explore CTA Banner -->
+    <section id="package" class="booking-cta">
+    <div class="booking-container">
+        <h2 class="booking-title">READY TO EXPLORE FONTAINE?</h2>
+
+        <div class="booking-card">
+        <div class="booking-details">
+            <p>Base price: <span>20,000 PHP per person</span></p>
+            <p>Duration: <span>5 days / 4 nights</span></p>
+            <p>Package code: <span>FONT-05</span></p>
+        </div>
+
+        <a href="#book" class="btn-book">BOOK NOW</a>
+        </div>
+    </div>
+
+    <!-- Torn paper edge transitioning into the navy FAQ section below -->
+    <img src="images/torn-divider.webp" alt="" class="torn-divider" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section id="faqs" class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-list">
+        <details class="faq-item">
+            <summary>
+            <span>What should I wear for the Fontaine tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Smart-casual attire and polished, comfortable walking shoes—Fontaine’s grand boulevards and Opera Epiclese favor neat fashion, while a light trench coat protects against coastal sea breezes.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>What should I bring with me?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Bring your FONT-05 confirmation, Aquabus (water-canal tram) transit pass provided at check-in, an umbrella, a camera, and Mora (local currency) for boutique cafés and pastry shops.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Is the tour suitable for families and children?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Yes! Smooth paved avenues, scenic Aquabus (water-canal tram) rides, and open plazas around the Lucine Fountain make Fontaine effortless and enjoyable for families with strollers or older relatives.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>How much walking is involved?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Light to moderate walking (2 to 3 hours daily) along flat stone promenades, supplemented by frequent Aquabus (water-canal tram) transfers.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Can I explore on my own during the trip?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Yes. Day 2 afternoon along the waterfront and Day 4 afternoon in the Quartier Lyonnais (artisan quarter) are completely free for independent café hopping and boutique shopping.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Are there any rules or protocols I should follow during the tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Maintain strict silence inside the Opera Epiclese if a court trial or performance is underway, keep hands clear of active clockwork gardemek (automated patrol robots), and validate your Aquabus pass before boarding.
+            </p>
+            </div>
+        </details>
+        </div>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Contact Info -->
+      <div class="footer-brand-col">
+        <a href="inazuma.html" class="footer-logo">
+          <svg class="footer-brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#83aae8" />
+                <stop offset="100%" stop-color="#0d3b73" />
+              </linearGradient>
+            </defs>
+            <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+            <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+          </svg>
+          <span class="footer-brand-text">teyvat<span class="brand-highlight">go</span></span>
+        </a>
+
+        <div class="footer-contact">
+          <p>Tel : 09451236789</p>
+          <p>Email : teyvatgo@gmail.com</p>
+          <p>Address : West Wind Boulevard, Knights<br>Quarter, Mondstadt City, Teyvat 1001</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="footer-links-col">
+        <h3>DESTINATIONS</h3>
+        <ul>
+          <li><a href="mondstadt.html">MONDSTADT</a></li>
+          <li><a href="#liyue">LIYUE</a></li>
+          <li><a href="#inazuma">INAZUMA</a></li>
+          <li><a href="#sumeru">SUMERU</a></li>
+          <li><a href="#fontaine">FONTAINE</a></li>
+          <li><a href="#natlan">NATLAN</a></li>
+          <li><a href="#snezhnaya">SNEZHNAYA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company Links & Social Media -->
+      <div class="footer-social-col">
+        <ul class="footer-primary-links">
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="about.html#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="footer-connect">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#facebook" aria-label="Teyvat Go on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#instagram" aria-label="Teyvat Go on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="#tiktok" aria-label="Teyvat Go on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved | Teyvat Go</p>
+    </div>
+  </footer>
+</body>
+
+</html>

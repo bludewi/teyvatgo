@@ -169,6 +169,10 @@ main {
   background: url('images/hero-sumeru.webp') center / cover no-repeat;
 }
 
+.hero-destination.hero-fontaine {
+  background: url('images/hero-fontaine.webp') center / cover no-repeat;
+}
+
 /* Hero Text Content */
 .hero-content {
   max-width: 50rem;
@@ -642,6 +646,10 @@ main {
 }
 
 .day-4 {
+  grid-column: 2 / 4;
+}
+
+.day-5 {
   grid-column: 2 / 4;
 }
 
@@ -1611,7 +1619,8 @@ main {
   .day-1,
   .day-2,
   .day-3,
-  .day-4 {
+  .day-4,
+  .day-5 {
     grid-column: span 1;
   }
 }
