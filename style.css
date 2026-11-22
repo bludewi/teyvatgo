@@ -177,6 +177,10 @@ main {
   background: url('images/hero-natlan.webp') center / cover no-repeat;
 }
 
+.hero-destination.hero-snezhnaya {
+  background: url('images/hero-snezhnaya.png') center / cover no-repeat;
+}
+
 /* Hero Text Content */
 .hero-content {
   max-width: 50rem;
