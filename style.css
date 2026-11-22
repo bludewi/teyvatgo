@@ -173,6 +173,10 @@ main {
   background: url('images/hero-fontaine.webp') center / cover no-repeat;
 }
 
+.hero-destination.hero-natlan {
+  background: url('images/hero-natlan.webp') center / cover no-repeat;
+}
+
 /* Hero Text Content */
 .hero-content {
   max-width: 50rem;
