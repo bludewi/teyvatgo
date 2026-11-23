@@ -1,8 +1,15 @@
 CREATE DATABASE IF NOT EXISTS teyvatgo_db
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
-
+  
 USE teyvatgo_db;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS inquiries;
+DROP TABLE IF EXISTS packages;
+DROP TABLE IF EXISTS users;
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- 1. USERS / ADMINS TABLE
 -- Stores the Agency Director and regional branch coordinators
@@ -23,7 +30,7 @@ CREATE TABLE packages (
   nation_name VARCHAR(50) NOT NULL,
   duration VARCHAR(50) NOT NULL,
   base_price DECIMAL(10, 2) NOT NULL
-);
+) ENGINE=InnoDB;
 
 -- 3. BOOKINGS / RESERVATIONS TABLE
 -- Stores customer tour reservations linked to packages and overseeing staff
@@ -37,12 +44,17 @@ CREATE TABLE bookings (
   travel_date DATE NOT NULL,
   travelers INT NOT NULL,
   total_price DECIMAL(10, 2) NOT NULL,
+  managed_by INT DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT fk_bookings_package
     FOREIGN KEY (package_code) REFERENCES packages(package_code)
     ON UPDATE CASCADE
-    ON DELETE RESTRICT
-);
+    ON DELETE RESTRICT,
+  CONSTRAINT fk_bookings_user
+    FOREIGN KEY (managed_by) REFERENCES users(user_id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+) ENGINE=InnoDB;
 
 -- 4. CLIENTS / INQUIRIES TABLE
 -- Stores prospective traveler questions submitted via about.php
@@ -53,11 +65,16 @@ CREATE TABLE inquiries (
   email VARCHAR(150) NOT NULL,
   subject VARCHAR(200) NOT NULL,
   comments TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+  handled_by INT DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_inquiries_user
+    FOREIGN KEY (handled_by) REFERENCES users(user_id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+) ENGINE=InnoDB;
 
 INSERT INTO users (full_name, email, password_hash, role, assigned_nation) VALUES
-('Agency Director(Alhaitham)', 'director@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Director', 'All Nations'),
+('Agency Director (Alhaitham)', 'director@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Director', 'All Nations'),
 ('Jean Gunnhildr', 'mondstadt.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Mondstadt'),
 ('Zhongli', 'liyue.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Liyue'),
 ('Yae Miko', 'inazuma.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Inazuma'),
@@ -65,7 +82,6 @@ INSERT INTO users (full_name, email, password_hash, role, assigned_nation) VALUE
 ('Neuvillette', 'fontaine.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Fontaine'),
 ('Mavuika', 'natlan.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Natlan'),
 ('Childe Tartaglia', 'snezhnaya.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Snezhnaya');
-
 
 INSERT INTO packages (package_code, nation_name, duration, base_price) VALUES
   ('MOND-01', 'Mondstadt', '3 days / 2 nights', 12500.00),
@@ -75,4 +91,3 @@ INSERT INTO packages (package_code, nation_name, duration, base_price) VALUES
   ('FONT-05', 'Fontaine', '5 days / 4 nights', 20000.00),
   ('NATL-06', 'Natlan', '4 days / 3 nights', 16500.00),
   ('SNEZ-07', 'Snezhnaya', '5 days / 4 nights', 22000.00);
-
