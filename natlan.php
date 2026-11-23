@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teyvat Go | Natlan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Freeman&family=Inter:wght@500;600;700;800&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="header-wrapper">
+    <header class="navbar">
+      <a href="mondstadt.php" class="logo">
+        <svg class="brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#83aae8" />
+              <stop offset="100%" stop-color="#0d3b73" />
+            </linearGradient>
+          </defs>
+          <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#forward-icon)" />
+          <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#forward-icon)" />
+        </svg>
+        <span class="brand-text">teyvat<span class="brand-highlight">go</span></span>
+      </a>
+      <nav class="nav-links">
+        <details class="destination-menu">
+          <summary>DESTINATIONS</summary>
+          <div class="destination-dropdown">
+            <a href="mondstadt.php">MONDSTADT</a>
+            <a href="liyue.php">LIYUE</a>
+            <a href="inazuma.php">INAZUMA</a>
+            <a href="sumeru.php">SUMERU</a>
+            <a href="fontaine.php">FONTAINE</a>
+            <a href="natlan.php">NATLAN</a>
+            <a href="snezhnaya.php">SNEZHNAYA</a>
+          </div>
+        </details>
+        <a href="about.php">ABOUT US</a>
+        <a href="about.php#contact" class="btn-contact">CONTACT</a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <section class="hero-destination hero-natlan">
+        <div class="hero-content">
+            <p class="hero-tagline">"The Land of War and Warm Springs"</p>
+            <h1 class="hero-title">NATLAN</h1>
+            <p class="hero-duration">Duration: 4 days / 3 nights</p>
+        </div>
+
+        <div class="hero-price">
+            <strong class="price-amount">16,500 PHP</strong>
+            <span class="price-unit">per person</span>
+        </div>
+    </section>
+
+    <nav class="sub-nav" aria-label="Natlan page sections">
+      <a href="#stops">YOUR STOPS</a>
+      <a href="#experiences">FEATURED EXPERIENCES</a>
+      <a href="#package">PACKAGE DETAILS</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+
+    <section class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+        <h2>ABOUT NATLAN</h2>
+        <p>
+            Natlan, known as the Nation of War and Valor, is an energetic adventure destination where dramatic volcanic canyons meet therapeutic thermal springs. Renowned for its vibrant tribal heritage, colorful cliffside murals, and spirited competitions, it offers travelers an unforgettable blend of adrenaline and relaxation. From roaring stadium arenas to serene coastal hot springs, every region of Natlan pulses with warmth, rhythm, and pride.
+        </p>
+        </div>
+
+        <div class="about-gallery">
+            <figure class="photo-frame photo-back">
+                <div class="photo-inner">
+                    <img src="images/about-natlan.jpg" alt="Natlan landscape" loading="lazy">
+                </div>
+            </figure>
+            <figure class="photo-frame photo-front">
+                <div class="photo-inner">
+                    <img src="images/about-natlan(1).jpg" alt="Natlan cultural site" loading="lazy">
+                </div>
+            </figure>
+        </div>
+    </div>
+    </section>
+
+    <section class="enjoy-section">
+    <!-- Decorative dashed travel path in background -->
+    <svg class="trail-bg" viewBox="0 0 1200 760" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- Top-right looping trail -->
+        <path d="M695 -10 C680 95, 760 155, 815 110 C855 75, 810 25, 785 75 C755 135, 835 190, 960 165 C1075 140, 1130 55, 1215 70"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-left looping trail -->
+        <path d="M-15 445 C75 405, 145 480, 105 535 C75 575, 25 535, 55 495 C90 450, 175 565, 235 515 C285 470, 225 385, 290 385 C340 385, 345 460, 325 510"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-right looping trail -->
+        <path d="M980 615 C1045 605, 1065 695, 1125 680 C1175 665, 1150 560, 1215 575"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+    </svg>
+
+    <div class="enjoy-container">
+        <h2 class="enjoy-title">You’ll enjoy this trip if...</h2>
+
+        <div class="enjoy-grid">
+        <!-- Card 1 -->
+        <article class="note-card card-1">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/uix-sharp--travel-adventure-cover.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You crave exciting adventures</strong> and would choose an action-packed journey over a relaxing vacation.
+            </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="note-card card-2">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/andrsrxn--shoe-sport.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You love sports, competitions, and activities</strong> that push your strength, courage, and endurance.
+            </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="note-card card-3">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/energy-icons--energy-cooperative-48-bold.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You thrive in energetic environments</strong> filled with music, celebrations, dancing, and passionate communities.
+            </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="note-card card-4">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/fluent-emoji-high-contrast--t-rex.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You are fascinated by powerful creatures, untamed wilderness</strong>, and nature at its most spectacular.
+            </p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="note-card card-5">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/uix-sharp--burn-rate.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You admire determination, resilience, and the fiery spirit</strong> of people who face every challenge head-on.
+            </p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <section id="stops" class="stops-section">
+    <header class="stops-header">
+        <h2>YOUR STOPS</h2>
+        <p>A closer look at the destinations waiting for you on this expedition.</p>
+    </header>
+
+    <div class="stops-list">
+        <!-- Stop 1: Tepecac Stadium -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/tepecac-stadium.png" alt="Tepecac Stadium" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>TEPECAC STADIUM</h3>
+            <p>
+                Standing at the heart of Natlan's vibrant gatherings, Tepecac Stadium welcomes travelers with its towering stone tiers, colorful banners, and the blazing Sacred Flame at its center. Walk through the grand viewing galleries, admire intricate tribal stonework, and experience the electrifying energy of local competitions and festival dances. Surrounding plazas bustle with artisans, musicians, and food stalls serving smoky roasted specialties. Visiting Tepecac Stadium immerses you directly in Natlan's bold and welcoming culture.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 2: Children of the Echoes Canyon -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/children-of-the-echoes-canyon.png" alt="Children of the Echoes Canyon" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>CHILDREN OF THE ECHOES CANYON</h3>
+            <p>
+               Carved into towering ochre cliffs and sparkling mineral veins, the Children of the Echoes Canyon offers a striking landscape of natural acoustics and artisan workshops. Follow winding canyon trails, watch master gem-carvers shape vibrant crystals, and listen to rhythmic music echo naturally off the stone walls. Scenic overlooks along the upper ridges provide sweeping views of Natlan's rugged volcanic valleys below. Every turn in the canyon reveals a remarkable harmony between rugged terrain and creative craftsmanship.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 3: People of the Springs Basin -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/people-of-the-spring.png" alt="People of the Springs Basin" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>PEOPLE OF THE SPRINGS BASIN</h3>
+            <p>
+               Set along a sun-drenched turquoise coastline fed by geothermal waters, the People of the Springs Basin is the ultimate destination for rest and rejuvenation. Soak in naturally heated mineral pools, stroll across wooden boardwalks over crystal-clear shallows, or relax beneath swaying tropical palms. As golden sunset hues reflect across the steaming pools and ocean waves, the entire basin transforms into a tranquil coastal sanctuary. It is the perfect retreat to unwind after days of canyon exploration.
+            </p>
+        </div>
+        </article>
+    </div>
+    </section>
+
+    <section class="package-section">
+    <div class="package-container">
+        <!-- Inclusions & Exclusions Postage-Stamp Cards -->
+        <div id="experiences" class="stamp-grid">
+        <article class="stamp-card">
+            <h2>INCLUSIONS</h2>
+            <ul>
+            <li>
+                3 nights tribal lodge accommodation near Tepecac Stadium with daily breakfast
+            </li>
+            <li>
+                Guided expeditions to Tepecac Stadium, Children of the Echoes Canyon, and People of the Springs basin
+            </li>
+            <li>
+                Welcome Natlanese roasted feast platter and thermal hot spring access pass
+            </li>
+            <li>
+                Regional tribal permits and licensed Tepecac Outpost branch tour guide
+            </li>
+            </ul>
+        </article>
+
+        <article class="stamp-card">
+            <h2>EXCLUSIONS</h2>
+            <ul>
+            <li>
+                Cross-border transit to and from Natlan
+            </li>
+            <li>
+                Lunches, dinners, and specialty beverages not listed in the itinerary
+            </li>
+            <li>
+                Personal souvenirs, extreme Saurian-riding (local companion creature) gear rentals, and travel insurance (required)
+            </li>
+            </ul>
+        </article>
+        </div>
+
+        <!-- Sample Itinerary -->
+        <div class="itinerary-block">
+        <h2 class="itinerary-title">SAMPLE ITINERARY</h2>
+
+        <div class="itinerary-grid">
+            <article class="itinerary-item day-1">
+            <h3>DAY 1 - Arrival &amp; Tepecac Stadium</h3>
+            <p>
+                Check-in at Tepecac Outpost, orientation briefing, afternoon tour of Tepecac Stadium and the Sacred Flame (ceremonial eternal fire) viewing gallery, and welcome roasted feast platter.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-2">
+            <h3>DAY 2 - Children of the Echoes Canyon</h3>
+            <p>
+                Morning canyon expedition into the mineral-rich cliffs of Children of the Echoes Canyon, guided tour of traditional gem-carving workshops, and afternoon acoustic cavern walk.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-3">
+            <h3>DAY 3 - People of the Springs Basin</h3>
+            <p>
+                Morning scenic transfer to the volcanic coast, guided tour of the People of the Springs basin, and afternoon relaxation in the therapeutic thermal hot springs.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-4">
+            <h3>DAY 4 - Tribal Market &amp; Departure</h3>
+            <p>
+                Breakfast at the lodge, free morning to browse woven textiles and local crafts, and checkout.
+            </p>
+            </article>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Ready to Explore CTA Banner -->
+    <section id="package" class="booking-cta">
+    <div class="booking-container">
+        <h2 class="booking-title">READY TO EXPLORE NATLAN?</h2>
+
+        <div class="booking-card">
+        <div class="booking-details">
+            <p>Base price: <span>16,500 PHP per person</span></p>
+            <p>Duration: <span>4 days / 3 nights</span></p>
+            <p>Package code: <span>NATL-06</span></p>
+        </div>
+
+        <a href="#book" class="btn-book">BOOK NOW</a>
+        </div>
+    </div>
+
+    <!-- Torn paper edge transitioning into the navy FAQ section below -->
+    <img src="images/torn-divider.webp" alt="" class="torn-divider" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section id="faqs" class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-list">
+        <details class="faq-item">
+            <summary>
+            <span>What should I wear for the Natlan tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Light, breathable athletic wear, sturdy hiking sandals or trail shoes for volcanic canyon terrain, and swimwear for the People of the Springs thermal hot springs.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>What should I bring with me?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Bring your NATL-06 booking code, quick-dry towel, high-SPF sunscreen, sunglasses, a large water bottle for warm volcanic climates, and comfortable evening attire.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Is the tour suitable for families and children?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Yes! Families enjoy the vibrant atmosphere at Tepecac Stadium and the shallow thermal pools, though children must be supervised near canyon edges and hot spring vents.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>How much walking is involved?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Moderate to active walking (3 to 4 hours daily) across stepped stadium tiers, canyon paths in Children of the Echoes Canyon, and coastal boardwalks.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Can I explore on my own during the trip?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Yes. You have free relaxation time on Day 3 afternoon at the People of the Springs resort and Day 4 morning at the tribal craft market.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Are there any rules or protocols I should follow during the tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Respect tribal customs and sacred obsidian totems (carved stone monuments), do not approach wild Saurians (local companion creatures) without a certified tribal handler, and follow posted temperature safety signs at all thermal hot springs.
+            </p>
+            </div>
+        </details>
+        </div>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Contact Info -->
+      <div class="footer-brand-col">
+        <a href="mondstadt.php" class="footer-logo">
+          <svg class="footer-brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#83aae8" />
+                <stop offset="100%" stop-color="#0d3b73" />
+              </linearGradient>
+            </defs>
+            <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+            <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+          </svg>
+          <span class="footer-brand-text">teyvat<span class="brand-highlight">go</span></span>
+        </a>
+
+        <div class="footer-contact">
+          <p>Tel : 09451236789</p>
+          <p>Email : teyvatgo@gmail.com</p>
+          <p>Address : West Wind Boulevard, Knights<br>Quarter, Mondstadt City, Teyvat 1001</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="footer-links-col">
+        <h3>DESTINATIONS</h3>
+        <ul>
+          <li><a href="mondstadt.php">MONDSTADT</a></li>
+          <li><a href="liyue.php">LIYUE</a></li>
+          <li><a href="inazuma.php">INAZUMA</a></li>
+          <li><a href="sumeru.php">SUMERU</a></li>
+          <li><a href="fontaine.php">FONTAINE</a></li>
+          <li><a href="natlan.php">NATLAN</a></li>
+          <li><a href="snezhnaya.php">SNEZHNAYA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company Links & Social Media -->
+      <div class="footer-social-col">
+        <ul class="footer-primary-links">
+            <li><a href="about.php">ABOUT US</a></li>
+            <li><a href="about.php#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="footer-connect">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved | Teyvat Go</p>
+    </div>
+  </footer>
+
+<!-- Booking Modal (#book) -->
+  <div id="booking-modal" class="modal-overlay" aria-hidden="true" hidden>
+    <div class="booking-modal-card" role="dialog" aria-modal="true" aria-labelledby="booking-modal-heading">
+      <div class="booking-modal-left">
+        <div class="booking-modal-image">
+          <img src="images/hero-natlan.webp" alt="Vibrant canyons and hot springs of Natlan" draggable="false">
+        </div>
+        <div class="booking-modal-summary">
+          <h3>NATLAN</h3>
+          <p><strong>Duration:</strong> 4 Days / 3 Nights</p>
+          <p><strong>Your Stops:</strong> Tepecac Stadium, Children of the Echoes Canyon, People of the Springs</p>
+        </div>
+      </div>
+
+      <div class="booking-modal-right">
+        <h2 id="booking-modal-heading" class="booking-modal-title">NATL-06 / NATLAN</h2>
+
+        <form id="booking-form" action="book.php" method="POST" novalidate>
+          <input type="hidden" name="package_code" value="NATL-06">
+          <input type="hidden" id="base-price" value="16500">
+
+          <h3 class="booking-section-label">YOUR DETAILS</h3>
+          <div class="booking-form-grid">
+            <div class="booking-field">
+              <label for="book-first-name">Lead Traveler First Name</label>
+              <input type="text" id="book-first-name" name="first_name" placeholder="Ex. Jane" required>
+              <small class="field-error" id="book-first-name-error"></small>
+            </div>
+
+            <div class="booking-field">
+              <label for="book-last-name">Last Name</label>
+              <input type="text" id="book-last-name" name="last_name" placeholder="Ex. Smith" required>
+              <small class="field-error" id="book-last-name-error"></small>
+            </div>
+
+            <div class="booking-field">
+              <label for="book-email">Confirmation Email</label>
+              <input type="email" id="book-email" name="email" placeholder="example@gmail.com" required>
+              <small class="field-error" id="book-email-error"></small>
+            </div>
+
+            <div class="booking-field">
+              <label for="book-phone">Phone Number</label>
+              <input type="tel" id="book-phone" name="phone" placeholder="Ex. 0912345678" required>
+              <small class="field-error" id="book-phone-error"></small>
+            </div>
+          </div>
+
+          <h3 class="booking-section-label">YOUR TRIP</h3>
+          <div class="booking-form-grid">
+            <div class="booking-field">
+              <label for="book-date">When would you like to travel?</label>
+              <input type="date" id="book-date" name="travel_date" required>
+              <small class="field-error" id="book-date-error"></small>
+            </div>
+
+            <div class="booking-field">
+              <label for="book-travelers">How many travelers?</label>
+              <input type="number" id="book-travelers" name="travelers" min="1" max="20" value="1" required>
+              <small class="field-error" id="book-travelers-error"></small>
+            </div>
+          </div>
+
+          <div class="booking-total-box">
+            <div class="booking-total-breakdown">
+              <span class="total-label">Estimated Total</span>
+              <span class="total-formula" id="book-price-formula">16,500 PHP x 1</span>
+            </div>
+            <div class="booking-total-amount" id="book-total-price">16,500 PHP</div>
+          </div>
+
+          <div class="booking-terms">
+            <label class="terms-checkbox-label" for="book-terms">
+              <input type="checkbox" id="book-terms" name="agree_terms" required>
+              <span>I agree to the booking terms and cancellation policy.</span>
+            </label>
+            <small class="field-error" id="book-terms-error"></small>
+          </div>
+
+          <div class="booking-modal-actions">
+            <button type="button" class="btn-modal-cancel" id="cancel-booking-modal">CANCEL</button>
+            <button type="submit" class="btn-modal-confirm">CONFIRM RESERVATION</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,4 +1,49 @@
 /* ===========================
+   SHARED VALIDATION HELPERS
+   =========================== */
+
+// Function 1: Validate that a person's name contains at least 2 letters and no numbers/symbols
+function isValidPersonName(name) {
+  return /^[A-Za-zÀ-ÿ\s'-]{2,}$/.test(name.trim());
+}
+
+// Function 2: Validate standard email format (example@gmail.com)
+function isValidEmailFormat(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+}
+
+// Function 3: Validate Philippine mobile number format (10 or 11 digits starting with 09)
+function isValidPhoneNumber(phone) {
+  return /^09\d{8,9}$/.test(phone.trim());
+}
+
+// Function 4: Check that a YYYY-MM-DD date string is today or a future date
+function isTodayOrFutureDate(dateString) {
+  if (!dateString) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const [year, month, day] = dateString.split('-').map(Number);
+  const selectedDate = new Date(year, month - 1, day);
+  return selectedDate >= today;
+}
+
+// Function 5: Apply error or valid border styling and error message to a form field
+function setFieldValidationState(inputEl, errorEl, errorMessage) {
+  if (!inputEl || !errorEl) return;
+
+  if (errorMessage) {
+    errorEl.textContent = errorMessage;
+    inputEl.classList.add('input-invalid');
+    inputEl.classList.remove('input-valid');
+  } else {
+    errorEl.textContent = '';
+    inputEl.classList.remove('input-invalid');
+    inputEl.classList.add('input-valid');
+  }
+}
+
+/* ===========================
    ABOUT US: PACKAGE CAROUSEL
    =========================== */
 
@@ -14,7 +59,7 @@ if (tripCard) {
       stops: 'Cider Lake, Windrise, Cathedral',
       image: 'images/mondstadt-hero.webp',
       alt: 'View of Mondstadt City across Cider Lake',
-      link: 'mondstadt.html'
+      link: 'mondstadt.php'
     },
     {
       nation: 'liyue',
@@ -24,7 +69,7 @@ if (tripCard) {
       stops: 'Liyue Harbor, Mt. Aocang, Wangshu Inn',
       image: 'images/liyue-hero.jpg',
       alt: 'Golden lanterns and cliffs of Liyue Harbor',
-      link: 'liyue.html'
+      link: 'liyue.php'
     },
     {
       nation: 'inazuma',
@@ -34,7 +79,7 @@ if (tripCard) {
       stops: 'Nakurami Grand Shrine, Ritou Trading Port, Tenshukaku',
       image: 'images/hero-inazuma.webp',
       alt: 'Sacred Sakura and purple torii gates in Inazuma',
-      link: 'inazuma.html'
+      link: 'inazuma.php'
     },
     {
       nation: 'sumeru',
@@ -44,7 +89,7 @@ if (tripCard) {
       stops: 'Sumeru City Academy, Gandharva Village, Caravan Ribat',
       image: 'images/hero-sumeru.webp',
       alt: 'Giant treehouse architecture of Sumeru City',
-      link: 'sumeru.html'
+      link: 'sumeru.php'
     },
     {
       nation: 'fontaine',
@@ -54,7 +99,7 @@ if (tripCard) {
       stops: 'Court of Fontaine, Opera Epiclese, Lucine Fountain',
       image: 'images/hero-fontaine.webp',
       alt: 'Elegant waterways and architecture of Fontaine',
-      link: 'fontaine.html'
+      link: 'fontaine.php'
     },
     {
       nation: 'natlan',
@@ -64,7 +109,7 @@ if (tripCard) {
       stops: 'Tepecac Stadium, Children of the Echoes Canyon, People of the Springs',
       image: 'images/hero-natlan.webp',
       alt: 'Vibrant canyons and hot springs of Natlan',
-      link: 'natlan.html'
+      link: 'natlan.php'
     },
     {
       nation: 'snezhnaya',
@@ -74,7 +119,7 @@ if (tripCard) {
       stops: 'Zapolyarny Palace Outskirts, Frost-bound Valleys, Glacial Outposts',
       image: 'images/hero-snezhnaya.png',
       alt: 'Snow-covered palaces and northern lights of Snezhnaya',
-      link: 'snezhnaya.html'
+      link: 'snezhnaya.php'
     }
   ];
 
@@ -92,7 +137,7 @@ if (tripCard) {
   const dots = document.querySelectorAll('.trip-dot');
   const filterPills = document.querySelectorAll('.filter-pill');
 
-  // Function 1: Update the visible package card content
+  // Function 6: Update the visible package card content and active pagination dot
   function renderTrip(index) {
     currentIndex = (index + trips.length) % trips.length;
     const trip = trips[currentIndex];
@@ -106,25 +151,36 @@ if (tripCard) {
     tripViewBtn.href = trip.link;
     tripBookBtn.href = `${trip.link}#book`;
 
-    dots.forEach((dot, i) => {
+    // Function 7: Highlight the pagination dot matching the active trip index
+    dots.forEach(function updateDotState(dot, i) {
       dot.classList.toggle('active', i === currentIndex);
     });
   }
 
-  // Function 2: Move to previous package
+  // Function 8: Move to the previous package in the carousel
   function showPrevTrip() {
     renderTrip(currentIndex - 1);
   }
 
-  // Function 3: Move to next package
+  // Function 9: Move to the next package in the carousel
   function showNextTrip() {
     renderTrip(currentIndex + 1);
   }
 
-  // Function 4: Filter packages using nation pills
+  // Function 10: Navigate directly to the slide corresponding to a clicked pagination dot
+  function handleDotClick(event) {
+    const targetIndex = Number(event.currentTarget.dataset.index);
+    renderTrip(targetIndex);
+  }
+
+  // Function 11: Filter packages when a nation pill button is clicked
   function filterTripsByNation(event) {
     const clickedPill = event.currentTarget;
-    filterPills.forEach((btn) => btn.classList.remove('active'));
+
+    // Function 12: Remove active highlight from all nation filter pills
+    filterPills.forEach(function clearPillActive(btn) {
+      btn.classList.remove('active');
+    });
     clickedPill.classList.add('active');
 
     const nation = clickedPill.dataset.filter;
@@ -133,445 +189,29 @@ if (tripCard) {
       return;
     }
 
-    const matchedIndex = trips.findIndex((t) => t.nation === nation);
+    // Function 13: Locate the trip object matching the selected nation filter
+    const matchedIndex = trips.findIndex(function matchNation(t) {
+      return t.nation === nation;
+    });
+
     if (matchedIndex !== -1) {
       renderTrip(matchedIndex);
     }
   }
 
-  // Event Type 1: Previous and next button clicks move through the package carousel
   prevBtn.addEventListener('click', showPrevTrip);
   nextBtn.addEventListener('click', showNextTrip);
 
-  // Dot clicks select a package directly by its position in the trips array
-  dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      renderTrip(Number(dot.dataset.index));
-    });
+  // Function 14: Attach click listener to each pagination dot
+  dots.forEach(function bindDotListener(dot) {
+    dot.addEventListener('click', handleDotClick);
   });
 
-  // Nation filter clicks update the active pill and render the matching package
-  filterPills.forEach((pill) => {
+  // Function 15: Attach click listener to each nation filter pill
+  filterPills.forEach(function bindPillListener(pill) {
     pill.addEventListener('click', filterTripsByNation);
   });
 }
-
-/* ===========================
-   PACKAGE BOOKING MODAL
-   =========================== */
-
-// Defines the hero image and label used by each nation package in the reservation modal
-const nationBookingData = {
-  mondstadt: {
-    name: 'MONDSTADT',
-    code: 'MOND-01',
-    image: 'images/mondstadt-hero.webp',
-    price: 12500,
-    duration: '3 days / 2 nights',
-    stops: 'Cider Lake, Windrise, Cathedral'
-  },
-  liyue: {
-    name: 'LIYUE',
-    code: 'LIYUE-02',
-    image: 'images/liyue-hero.jpg',
-    price: 15000,
-    duration: '4 days / 3 nights',
-    stops: 'Liyue Harbor, Mt. Aocang, Wangshu Inn'
-  },
-  inazuma: {
-    name: 'INAZUMA',
-    code: 'INAZ-03',
-    image: 'images/hero-inazuma.webp',
-    price: 18000,
-    duration: '4 days / 3 nights',
-    stops: 'Nakurami Grand Shrine, Ritou Trading Port, Tenshukaku'
-  },
-  sumeru: {
-    name: 'SUMERU',
-    code: 'SUME-04',
-    image: 'images/hero-sumeru.webp',
-    price: 14000,
-    duration: '3 days / 3 nights',
-    stops: 'Sumeru City Academy, Gandharva Village, Caravan Ribat'
-  },
-  fontaine: {
-    name: 'FONTAINE',
-    code: 'FONT-05',
-    image: 'images/hero-fontaine.webp',
-    price: 20000,
-    duration: '5 days / 4 nights',
-    stops: 'Court of Fontaine, Opera Epiclese, Lucine Fountain'
-  },
-  natlan: {
-    name: 'NATLAN',
-    code: 'NATL-06',
-    image: 'images/hero-natlan.webp',
-    price: 16500,
-    duration: '4 days / 3 nights',
-    stops: 'Tepecac Stadium, Children of the Echoes Canyon, People of the Springs'
-  },
-  snezhnaya: {
-    name: 'SNEZHNAYA',
-    code: 'SNEZ-07',
-    image: 'images/hero-snezhnaya.png',
-    price: 22000,
-    duration: '5 days / 4 nights',
-    stops: 'Zapolyarny Palace Outskirts, Frost-bound Valleys, Glacial Outposts'
-  }
-};
-
-// Creates the reusable booking modal once, then populates it for the clicked package
-function createBookingModal() {
-  const existingModal = document.getElementById('booking-modal');
-  if (existingModal) return existingModal;
-
-  const modal = document.createElement('div');
-  modal.id = 'booking-modal';
-  modal.className = 'booking-modal';
-  modal.setAttribute('role', 'dialog');
-  modal.setAttribute('aria-modal', 'true');
-  modal.setAttribute('aria-labelledby', 'booking-modal-title');
-  modal.innerHTML = `
-    <div class="booking-modal-backdrop"></div>
-    <div class="booking-modal-panel">
-      <aside class="booking-modal-media">
-        <img id="booking-modal-image" src="" alt="">
-        <div class="booking-modal-summary">
-          <h3 id="booking-modal-name"></h3>
-          <p>Duration: <strong id="booking-modal-duration"></strong></p>
-          <p>Your Stops: <strong id="booking-modal-stops"></strong></p>
-        </div>
-      </aside>
-
-      <form class="booking-modal-form" id="booking-modal-form">
-        <h2 id="booking-modal-title"></h2>
-
-        <h3 class="booking-modal-section">YOUR DETAILS</h3>
-        <div class="booking-modal-grid">
-          <div class="booking-modal-field">
-            <label for="booking-first-name">Lead Traveler First Name</label>
-            <input id="booking-first-name" name="first_name" type="text" placeholder="Ex. Jane" required>
-          </div>
-          <div class="booking-modal-field">
-            <label for="booking-last-name">Last Name</label>
-            <input id="booking-last-name" name="last_name" type="text" placeholder="Ex. Smith" required>
-          </div>
-          <div class="booking-modal-field">
-            <label for="booking-email">Confirmation Email</label>
-            <input id="booking-email" name="email" type="email" placeholder="example@gmail.com" required>
-          </div>
-          <div class="booking-modal-field">
-            <label for="booking-phone">Phone Number</label>
-            <input id="booking-phone" name="phone" type="tel" placeholder="Ex. 0912345678" required>
-          </div>
-        </div>
-
-        <h3 class="booking-modal-section">YOUR TRIP</h3>
-        <div class="booking-modal-grid">
-          <div class="booking-modal-field">
-            <label for="booking-date">When would you like to travel?</label>
-            <input id="booking-date" name="travel_date" type="date" required>
-          </div>
-          <div class="booking-modal-field">
-            <label for="booking-travelers">How many travelers?</label>
-            <input id="booking-travelers" name="travelers" type="number" min="1" value="1" required>
-          </div>
-        </div>
-
-        <div class="booking-modal-total">
-          <div>
-            <strong>Estimated Total</strong>
-            <span id="booking-modal-estimated"></span>
-          </div>
-          <strong id="booking-modal-total"></strong>
-        </div>
-
-        <label class="booking-modal-terms">
-          <input id="booking-terms" name="terms" type="checkbox" required>
-          <span>I agree to the booking terms and cancellation policy.</span>
-        </label>
-
-        <div class="booking-modal-actions">
-          <button type="button" class="booking-modal-cancel">CANCEL</button>
-          <button type="submit" class="booking-modal-confirm">CONFIRM RESERVATION</button>
-        </div>
-      </form>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-
-  const cancelBtn = modal.querySelector('.booking-modal-cancel');
-  const backdrop = modal.querySelector('.booking-modal-backdrop');
-  const form = modal.querySelector('#booking-modal-form');
-  const travelersInput = modal.querySelector('#booking-travelers');
-
-  // Cancel button and backdrop clicks close the modal
-  cancelBtn.addEventListener('click', closeBookingModal);
-  backdrop.addEventListener('click', closeBookingModal);
-
-  // Escape key closes the modal while it is open
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && modal.classList.contains('active')) {
-      closeBookingModal();
-    }
-  });
-
-  // Traveler count changes recalculate the estimated package total
-  travelersInput.addEventListener('input', updateBookingTotal);
-
-  const bookingDate = modal.querySelector('#booking-date');
-  const bookingPhone = modal.querySelector('#booking-phone');
-  const bookingFirstName = modal.querySelector('#booking-first-name');
-  const bookingLastName = modal.querySelector('#booking-last-name');
-  const bookingEmail = modal.querySelector('#booking-email');
-
-  // Set today's date as the earliest selectable travel date
-  const today = new Date();
-  const localToday = [
-    today.getFullYear(),
-    String(today.getMonth() + 1).padStart(2, '0'),
-    String(today.getDate()).padStart(2, '0')
-  ].join('-');
-  bookingDate.min = localToday;
-
-  // Validate names when fields lose focus
-  [bookingFirstName, bookingLastName].forEach((nameInput) => {
-    nameInput.addEventListener('blur', () => {
-      const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
-      nameInput.setCustomValidity(
-        namePattern.test(nameInput.value.trim())
-          ? ''
-          : 'Please enter a valid name with at least 2 letters.'
-      );
-    });
-  });
-
-  // Validate email format when the field loses focus
-  bookingEmail.addEventListener('blur', () => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    bookingEmail.setCustomValidity(
-      emailPattern.test(bookingEmail.value.trim())
-        ? ''
-        : 'Please enter a valid email address.'
-    );
-  });
-
-  // Accept 10 or 11 digits and reject letters or invalid phone lengths
-  bookingPhone.addEventListener('blur', () => {
-    const phoneDigits = bookingPhone.value.replace(/\D/g, '');
-    const phonePattern = /^[0-9+\s()-]+$/;
-    bookingPhone.setCustomValidity(
-      phonePattern.test(bookingPhone.value.trim()) &&
-      phoneDigits.length >= 10 &&
-      phoneDigits.length <= 11
-        ? ''
-        : 'Please enter a valid 10 or 11 digit phone number.'
-    );
-  });
-
-  // Reject past travel dates
-  bookingDate.addEventListener('change', () => {
-    bookingDate.setCustomValidity(
-      bookingDate.value && bookingDate.value >= localToday
-        ? ''
-        : 'Please select today or a future travel date.'
-    );
-  });
-
-  // Submission closes the booking form and immediately opens the reservation confirmation card
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneDigits = bookingPhone.value.replace(/\D/g, '');
-    const phonePattern = /^[0-9+\s()-]+$/;
-    let invalidField = null;
-
-    // Revalidate names because submission must not rely only on blur events
-    if (!namePattern.test(bookingFirstName.value.trim())) {
-      bookingFirstName.setCustomValidity('Please enter a valid first name with at least 2 letters.');
-      if (!invalidField) invalidField = bookingFirstName;
-    } else {
-      bookingFirstName.setCustomValidity('');
-    }
-
-    if (!namePattern.test(bookingLastName.value.trim())) {
-      bookingLastName.setCustomValidity('Please enter a valid last name with at least 2 letters.');
-      if (!invalidField) invalidField = bookingLastName;
-    } else {
-      bookingLastName.setCustomValidity('');
-    }
-
-    // Revalidate email, phone, and travel date before confirmation
-    if (!emailPattern.test(bookingEmail.value.trim())) {
-      bookingEmail.setCustomValidity('Please enter a valid email address.');
-      if (!invalidField) invalidField = bookingEmail;
-    } else {
-      bookingEmail.setCustomValidity('');
-    }
-
-    if (!phonePattern.test(bookingPhone.value.trim()) || phoneDigits.length < 10 || phoneDigits.length > 11) {
-      bookingPhone.setCustomValidity('Please enter a valid 10 or 11 digit phone number.');
-      if (!invalidField) invalidField = bookingPhone;
-    } else {
-      bookingPhone.setCustomValidity('');
-    }
-
-    if (!bookingDate.value || bookingDate.value < localToday) {
-      bookingDate.setCustomValidity('Please select today or a future travel date.');
-      if (!invalidField) invalidField = bookingDate;
-    } else {
-      bookingDate.setCustomValidity('');
-    }
-
-    if (invalidField || !form.checkValidity()) {
-      if (invalidField) invalidField.reportValidity();
-      else form.reportValidity();
-      return;
-    }
-
-    // Require a final user decision before confirming or cancelling the reservation
-    const shouldConfirm = window.confirm(
-      'Confirm this reservation request? Select OK to confirm or Cancel to keep editing.'
-    );
-    if (!shouldConfirm) {
-      return;
-    }
-
-    closeBookingModal();
-    openReservationConfirmation();
-  });
-
-  return modal;
-}
-
-// Displays the selected nation package in the reservation modal
-function openBookingModal(nationKey) {
-  const modal = createBookingModal();
-  const data = nationBookingData[nationKey];
-  if (!data) return;
-
-  modal.querySelector('#booking-modal-form').reset();
-  modal.querySelector('#booking-modal-image').src = data.image;
-  modal.querySelector('#booking-modal-image').alt = `${data.name} destination`;
-  modal.querySelector('#booking-modal-name').textContent = data.name;
-  modal.querySelector('#booking-modal-duration').textContent = data.duration;
-  modal.querySelector('#booking-modal-stops').textContent = data.stops;
-  modal.querySelector('#booking-modal-title').textContent = `${data.code} / ${data.name}`;
-  modal.dataset.price = String(data.price);
-  modal.querySelector('#booking-modal-estimated').textContent = `${data.code} × 1`;
-  modal.querySelector('#booking-modal-total').textContent = `${data.price.toLocaleString('en-US')} PHP`;
-  modal.querySelector('#booking-travelers').value = '1';
-
-  // Clear custom validity messages before showing the form again
-  modal.querySelectorAll('input').forEach((input) => input.setCustomValidity(''));
-
-  modal.classList.add('active');
-  document.body.classList.add('booking-modal-open');
-  modal.querySelector('#booking-first-name').focus();
-}
-
-// Calculates and updates the modal total based on traveler count
-function updateBookingTotal() {
-  const modal = document.getElementById('booking-modal');
-  if (!modal) return;
-
-  const travelers = Math.max(1, Number(modal.querySelector('#booking-travelers').value) || 1);
-  const price = Number(modal.dataset.price) || 0;
-  const code = modal.querySelector('#booking-modal-title').textContent.split(' / ')[0];
-
-  modal.querySelector('#booking-modal-estimated').textContent = `${code} × ${travelers}`;
-  modal.querySelector('#booking-modal-total').textContent =
-    `${(price * travelers).toLocaleString('en-US')} PHP`;
-}
-
-// Closes the modal and restores normal page scrolling
-function closeBookingModal() {
-  const modal = document.getElementById('booking-modal');
-  if (!modal) return;
-
-  modal.classList.remove('active');
-  document.body.classList.remove('booking-modal-open');
-  modal.querySelector('#booking-modal-form').reset();
-}
-
-// Creates and displays the final reservation confirmation dialog
-function openReservationConfirmation() {
-  let confirmation = document.getElementById('reservation-confirmation');
-
-  if (!confirmation) {
-    confirmation = document.createElement('div');
-    confirmation.id = 'reservation-confirmation';
-    confirmation.className = 'reservation-confirmation';
-    confirmation.setAttribute('role', 'dialog');
-    confirmation.setAttribute('aria-modal', 'true');
-    confirmation.setAttribute('aria-labelledby', 'reservation-confirmation-title');
-    confirmation.innerHTML = `
-      <div class="reservation-confirmation-backdrop"></div>
-      <div class="reservation-confirmation-card">
-        <div class="reservation-confirmation-heading">
-          <svg class="reservation-confirmation-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
-            <circle cx="26" cy="26" r="24" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M15 27.5L23 35L38 18.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <h2 id="reservation-confirmation-title">RESERVATION CONFIRMED!</h2>
-        </div>
-        <p>
-          Thank you for booking with TeyvatGo. A confirmation email<br>
-          with your trip details has been sent to your registered email<br>
-          address.
-        </p>
-        <button type="button" class="reservation-confirmation-close">Close</button>
-      </div>
-    `;
-    document.body.appendChild(confirmation);
-
-    // The close button and backdrop dismiss the confirmation dialog
-    confirmation.querySelector('.reservation-confirmation-close').addEventListener('click', closeReservationConfirmation);
-    confirmation.querySelector('.reservation-confirmation-backdrop').addEventListener('click', closeReservationConfirmation);
-
-    // Escape key also dismisses the confirmation dialog
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && confirmation.classList.contains('active')) {
-        closeReservationConfirmation();
-      }
-    });
-  }
-
-  confirmation.classList.add('active');
-  document.body.classList.add('reservation-confirmation-open');
-  confirmation.querySelector('.reservation-confirmation-close').focus();
-}
-
-// Closes the final confirmation dialog and restores page scrolling
-function closeReservationConfirmation() {
-  const confirmation = document.getElementById('reservation-confirmation');
-  if (!confirmation) return;
-
-  confirmation.classList.remove('active');
-  document.body.classList.remove('reservation-confirmation-open');
-}
-
-// Intercepts all package Book Now buttons and opens the matching reservation modal
-document.querySelectorAll('.btn-trip-book, .btn-book').forEach((button) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    let nationKey = '';
-    const buttonLink = button.getAttribute('href') || '';
-
-    if (button.classList.contains('btn-trip-book')) {
-      nationKey = buttonLink.split('/').pop().split('.')[0];
-    } else {
-      const pageName = window.location.pathname.split('/').pop().toLowerCase();
-      nationKey = pageName.replace('.html', '');
-    }
-
-    openBookingModal(nationKey);
-  });
-});
 
 /* ===========================
    ABOUT US: POLAROID HOVER
@@ -579,7 +219,7 @@ document.querySelectorAll('.btn-trip-book, .btn-book').forEach((button) => {
 
 const journeyFrames = document.querySelectorAll('.journey-frame');
 
-// Function 5: Straighten and bring hovered Polaroid frame to front
+// Function 16: Straighten and bring hovered Polaroid frame to the foreground
 function highlightJourneyFrame(event) {
   const frame = event.currentTarget;
   frame.style.transform = 'rotate(0deg) scale(1.04)';
@@ -587,123 +227,338 @@ function highlightJourneyFrame(event) {
   frame.style.transition = 'transform 0.25s ease';
 }
 
-// Function 6: Restore default Polaroid tilt on mouse leave
+// Function 17: Restore default Polaroid tilt when the cursor leaves
 function resetJourneyFrame(event) {
   const frame = event.currentTarget;
   frame.style.transform = '';
   frame.style.zIndex = '';
 }
 
-// Event Types 2 & 3: Mouseover straightens and lifts a frame; mouseout restores it
-journeyFrames.forEach((frame) => {
+// Function 18: Bind mouseover and mouseout events to each Polaroid frame
+journeyFrames.forEach(function bindFrameHover(frame) {
   frame.addEventListener('mouseover', highlightJourneyFrame);
   frame.addEventListener('mouseout', resetJourneyFrame);
 });
 
 /* ===========================
-   ABOUT US: CONTACT FORM
+   ABOUT US: INQUIRY FORM
    =========================== */
 
 const contactForm = document.querySelector('.contact-form');
-const emailInput = document.getElementById('email');
+const inquirySuccessModal = document.querySelector('.inquiry-success-modal');
 
-if (contactForm && emailInput) {
-  // Create the visible success message shown only after valid form submission
+if (inquirySuccessModal) {
+  const closeInquirySuccess = inquirySuccessModal.querySelector('.inquiry-success-close');
+
+  function dismissInquirySuccess() {
+    inquirySuccessModal.hidden = true;
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.documentElement.classList.add('modal-open');
+  document.body.classList.add('modal-open');
+  closeInquirySuccess.addEventListener('click', dismissInquirySuccess);
+  closeInquirySuccess.focus();
+  document.addEventListener('keydown', function handleInquirySuccessEscape(event) {
+    if (event.key === 'Escape') {
+      dismissInquirySuccess();
+    }
+  });
+}
+
+if (contactForm) {
+  const firstNameInput = document.getElementById('first-name');
+  const lastNameInput = document.getElementById('last-name');
+  const emailInput = document.getElementById('email');
+  const subjectInput = document.getElementById('subject');
+  const commentsInput = document.getElementById('comments');
+
+  // Function 19: Create and insert an error message element below an inquiry input
+  function attachErrorElement(inputEl) {
+    const err = document.createElement('small');
+    err.className = 'field-error';
+    inputEl.insertAdjacentElement('afterend', err);
+    return err;
+  }
+
+  const firstNameError = attachErrorElement(firstNameInput);
+  const lastNameError = attachErrorElement(lastNameInput);
+  const emailError = attachErrorElement(emailInput);
+  const subjectError = attachErrorElement(subjectInput);
+  const commentsError = attachErrorElement(commentsInput);
+
   const formFeedback = document.createElement('p');
   formFeedback.style.marginTop = '16px';
   formFeedback.style.fontWeight = '700';
   formFeedback.style.textAlign = 'center';
+  formFeedback.style.color = '#c7f8b6';
   contactForm.appendChild(formFeedback);
 
-  // Function 7: Validate email format when user changes the field
-  function validateEmailField() {
-    const value = emailInput.value.trim();
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  // Function 20: Validate all inquiry form fields and return true only when all pass
+  function validateInquiryForm() {
+    let isFormValid = true;
 
-    if (!value) {
-      emailInput.setCustomValidity('');
-      return;
-    }
-
-    if (isValid) {
-      emailInput.setCustomValidity('');
+    if (!isValidPersonName(firstNameInput.value)) {
+      setFieldValidationState(firstNameInput, firstNameError, 'Enter a valid first name (letters only, min. 2 characters).');
+      isFormValid = false;
     } else {
-      emailInput.setCustomValidity('Please enter a valid email address.');
+      setFieldValidationState(firstNameInput, firstNameError, '');
     }
+
+    if (!isValidPersonName(lastNameInput.value)) {
+      setFieldValidationState(lastNameInput, lastNameError, 'Enter a valid last name (letters only, min. 2 characters).');
+      isFormValid = false;
+    } else {
+      setFieldValidationState(lastNameInput, lastNameError, '');
+    }
+
+    if (!isValidEmailFormat(emailInput.value)) {
+      setFieldValidationState(emailInput, emailError, 'Please enter a valid email (e.g., example@gmail.com).');
+      isFormValid = false;
+    } else {
+      setFieldValidationState(emailInput, emailError, '');
+    }
+
+    if (subjectInput.value.trim().length < 3) {
+      setFieldValidationState(subjectInput, subjectError, 'Please enter a subject (at least 3 characters).');
+      isFormValid = false;
+    } else {
+      setFieldValidationState(subjectInput, subjectError, '');
+    }
+
+    if (commentsInput.value.trim().length < 10) {
+      setFieldValidationState(commentsInput, commentsError, 'Please enter at least 10 characters for your question.');
+      isFormValid = false;
+    } else {
+      setFieldValidationState(commentsInput, commentsError, '');
+    }
+
+    return isFormValid;
   }
 
-  // Function 8: Display visible confirmation message on form submit
+  // Function 21: Block invalid inquiry submissions or allow valid data to submit to inquire.php
   function handleContactSubmit(event) {
-    event.preventDefault();
-
-    // Collect contact fields so invalid values can be reported before submission
-    const firstNameInput = document.getElementById('first-name');
-    const lastNameInput = document.getElementById('last-name');
-    const subjectInput = document.getElementById('subject');
-    const commentsInput = document.getElementById('comments');
-    const firstName = firstNameInput.value.trim();
-    const lastName = lastNameInput.value.trim();
-    const subject = subjectInput.value.trim();
-    const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
-
-    let invalidField = null;
-
-    // Validate first name and focus the field when its value is invalid
-    if (!namePattern.test(firstName)) {
-      firstNameInput.setCustomValidity('Please enter a valid first name with at least 2 letters.');
-      invalidField = firstNameInput;
-    } else {
-      firstNameInput.setCustomValidity('');
+    if (!validateInquiryForm()) {
+      event.preventDefault();
+      formFeedback.textContent = 'Please fix the highlighted errors above before submitting.';
+      formFeedback.style.color = '#ffd4d4';
     }
+  }
 
-    // Validate last name and focus the field when its value is invalid
-    if (!namePattern.test(lastName)) {
-      lastNameInput.setCustomValidity('Please enter a valid last name with at least 2 letters.');
-      if (!invalidField) invalidField = lastNameInput;
-    } else {
-      lastNameInput.setCustomValidity('');
+  emailInput.addEventListener('change', validateInquiryForm);
+  contactForm.addEventListener('submit', handleContactSubmit);
+}
+
+/* ===========================
+   DESTINATION: BOOKING MODAL
+   =========================== */
+
+const bookingModal = document.getElementById('booking-modal');
+const reservationSuccessModal = document.querySelector('.reservation-success-modal');
+
+if (reservationSuccessModal) {
+  const closeReservationSuccess = reservationSuccessModal.querySelector('.reservation-success-close');
+
+  function dismissReservationSuccess() {
+    reservationSuccessModal.hidden = true;
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.documentElement.classList.add('modal-open');
+  document.body.classList.add('modal-open');
+  closeReservationSuccess.addEventListener('click', dismissReservationSuccess);
+  closeReservationSuccess.focus();
+  document.addEventListener('keydown', function handleReservationSuccessEscape(event) {
+    if (event.key === 'Escape') {
+      dismissReservationSuccess();
     }
+  });
+}
 
-    // Re-run email validation so submission cannot bypass the change event
-    validateEmailField();
-    if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
-      emailInput.setCustomValidity('Please enter a valid email address.');
-      if (!invalidField) invalidField = emailInput;
-    } else {
-      emailInput.setCustomValidity('');
-    }
+if (bookingModal) {
+  const openBookBtns = document.querySelectorAll('.btn-book');
+  const cancelModalBtn = document.getElementById('cancel-booking-modal');
+  const bookingForm = document.getElementById('booking-form');
 
-    // Subject and questions must contain a selected package and actual text
-    if (!subject) {
-      subjectInput.setCustomValidity('Please select a package.');
-      if (!invalidField) invalidField = subjectInput;
-    } else {
-      subjectInput.setCustomValidity('');
-    }
+  const bookFirstNameInput = document.getElementById('book-first-name');
+  const bookLastNameInput = document.getElementById('book-last-name');
+  const bookEmailInput = document.getElementById('book-email');
+  const bookPhoneInput = document.getElementById('book-phone');
+  const bookDateInput = document.getElementById('book-date');
+  const bookTravelersInput = document.getElementById('book-travelers');
+  const bookTermsCheckbox = document.getElementById('book-terms');
 
-    if (!commentsInput.value.trim()) {
-      commentsInput.setCustomValidity('Please enter your question.');
-      if (!invalidField) invalidField = commentsInput;
-    } else {
-      commentsInput.setCustomValidity('');
-    }
+  const basePriceInput = document.getElementById('base-price');
+  const priceFormulaDisplay = document.getElementById('book-price-formula');
+  const totalPriceDisplay = document.getElementById('book-total-price');
 
-    // Stop submission and show the browser validation message for the first invalid field
-    if (invalidField || !contactForm.checkValidity()) {
-      if (invalidField) invalidField.reportValidity();
-      else contactForm.reportValidity();
+  const bookFirstNameError = document.getElementById('book-first-name-error');
+  const bookLastNameError = document.getElementById('book-last-name-error');
+  const bookEmailError = document.getElementById('book-email-error');
+  const bookPhoneError = document.getElementById('book-phone-error');
+  const bookDateError = document.getElementById('book-date-error');
+  const bookTravelersError = document.getElementById('book-travelers-error');
+  const bookTermsError = document.getElementById('book-terms-error');
+
+  // Function 22: Restrict the travel date input so past dates cannot be picked
+  function setMinimumBookingDate() {
+    const todayISO = new Date().toISOString().split('T')[0];
+    bookDateInput.min = todayISO;
+  }
+
+  // Function 23: Update the price formula ("12,500 PHP x N") and Estimated Total dynamically
+  function updateBookingTotalPrice() {
+    const basePrice = Number(basePriceInput.value) || 12500;
+    const count = Math.max(1, Number(bookTravelersInput.value) || 1);
+    const total = basePrice * count;
+
+    priceFormulaDisplay.textContent = `${basePrice.toLocaleString('en-PH')} PHP x ${count}`;
+    totalPriceDisplay.textContent = `${total.toLocaleString('en-PH')} PHP`;
+  }
+
+  // Function 24: Block wheel or touch scrolling inside the modal from moving the background page
+  function preventBackgroundScroll(event) {
+    if (bookingModal.hidden) return;
+
+    const scrollablePanel = bookingModal.querySelector('.booking-modal-right');
+    const isInsideScrollablePanel = scrollablePanel && scrollablePanel.contains(event.target);
+
+    if (!isInsideScrollablePanel) {
+      event.preventDefault();
       return;
     }
 
-    formFeedback.textContent = `Thank you, ${firstName}! Your message regarding "${subject}" has been sent to Teyvat Go.`;
-    formFeedback.style.color = '#053264';
+    const deltaY = event.deltaY || 0;
+    const atTop = scrollablePanel.scrollTop <= 0 && deltaY < 0;
+    const atBottom =
+      scrollablePanel.scrollTop + scrollablePanel.clientHeight >= scrollablePanel.scrollHeight - 1 &&
+      deltaY > 0;
 
-    contactForm.reset();
-    emailInput.style.borderColor = '';
+    if (scrollablePanel.scrollHeight <= scrollablePanel.clientHeight || atTop || atBottom) {
+      event.preventDefault();
+    }
   }
 
-  // Event Type 4: A change to the email field runs format validation
-  emailInput.addEventListener('change', validateEmailField);
-  // Event Type 5: Submission prevents navigation and displays a confirmation
-  contactForm.addEventListener('submit', handleContactSubmit);
+  // Function 25: Open the booking modal and lock background page scrolling
+  function openBookingModal(event) {
+    if (event) event.preventDefault();
+    setMinimumBookingDate();
+    updateBookingTotalPrice();
+    bookingModal.hidden = false;
+    bookingModal.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
+    bookFirstNameInput.focus();
+  }
+
+  // Function 26: Close the booking modal and restore background page scrolling
+  function closeBookingModal() {
+    bookingModal.hidden = true;
+    bookingModal.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  // Function 27: Close modal if the user clicks outside the modal card
+  function handleBackdropClick(event) {
+    if (event.target === bookingModal) {
+      closeBookingModal();
+    }
+  }
+
+  // Function 28: Close modal when the Escape key is pressed
+  function handleEscapeKey(event) {
+    if (event.key === 'Escape' && !bookingModal.hidden) {
+      closeBookingModal();
+    }
+  }
+
+  // Function 29: Validate all booking modal fields before submitting to the database
+  function validateBookingForm() {
+    let isValid = true;
+
+    if (!isValidPersonName(bookFirstNameInput.value)) {
+      setFieldValidationState(bookFirstNameInput, bookFirstNameError, 'Enter a valid first name (letters only).');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookFirstNameInput, bookFirstNameError, '');
+    }
+
+    if (!isValidPersonName(bookLastNameInput.value)) {
+      setFieldValidationState(bookLastNameInput, bookLastNameError, 'Enter a valid last name (letters only).');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookLastNameInput, bookLastNameError, '');
+    }
+
+    if (!isValidEmailFormat(bookEmailInput.value)) {
+      setFieldValidationState(bookEmailInput, bookEmailError, 'Enter a valid email (e.g., example@gmail.com).');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookEmailInput, bookEmailError, '');
+    }
+
+    if (!isValidPhoneNumber(bookPhoneInput.value)) {
+      setFieldValidationState(bookPhoneInput, bookPhoneError, 'Enter a valid mobile number (e.g., 0912345678).');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookPhoneInput, bookPhoneError, '');
+    }
+
+    if (!isTodayOrFutureDate(bookDateInput.value)) {
+      setFieldValidationState(bookDateInput, bookDateError, 'Please choose today or a future date.');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookDateInput, bookDateError, '');
+    }
+
+    const travelersCount = Number(bookTravelersInput.value);
+    if (!Number.isInteger(travelersCount) || travelersCount < 1 || travelersCount > 20) {
+      setFieldValidationState(bookTravelersInput, bookTravelersError, 'Enter 1 to 20 travelers.');
+      isValid = false;
+    } else {
+      setFieldValidationState(bookTravelersInput, bookTravelersError, '');
+    }
+
+    if (!bookTermsCheckbox.checked) {
+      bookTermsError.textContent = 'You must agree to the booking terms and cancellation policy.';
+      isValid = false;
+    } else {
+      bookTermsError.textContent = '';
+    }
+
+    return isValid;
+  }
+
+  // Function 30: Prevent form submission to book.php if validation fails
+  function handleBookingSubmit(event) {
+    if (!validateBookingForm()) {
+      event.preventDefault();
+      return;
+    }
+
+    if (!window.confirm('Are you sure you want to confirm this reservation?')) {
+      event.preventDefault();
+    }
+  }
+
+  // Function 31: Attach click listener to every Book Now button on the page
+  openBookBtns.forEach(function bindBookButton(btn) {
+    btn.addEventListener('click', openBookingModal);
+  });
+
+  cancelModalBtn.addEventListener('click', closeBookingModal);
+  bookingModal.addEventListener('click', handleBackdropClick);
+  bookingModal.addEventListener('wheel', preventBackgroundScroll, { passive: false });
+  bookingModal.addEventListener('touchmove', preventBackgroundScroll, { passive: false });
+  document.addEventListener('keydown', handleEscapeKey);
+  bookTravelersInput.addEventListener('input', updateBookingTotalPrice);
+  bookingForm.addEventListener('submit', handleBookingSubmit);
+
+  // Automatically open modal if redirected from about.php via mondstadt.php#book
+  if (window.location.hash === '#book') {
+    openBookingModal();
+  }
 }

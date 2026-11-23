@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teyvat Go | Sumeru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Freeman&family=Inter:wght@500;600;700;800&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="header-wrapper">
+    <header class="navbar">
+      <a href="mondstadt.php" class="logo">
+        <svg class="brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#83aae8" />
+              <stop offset="100%" stop-color="#0d3b73" />
+            </linearGradient>
+          </defs>
+          <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#forward-icon)" />
+          <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#forward-icon)" />
+        </svg>
+        <span class="brand-text">teyvat<span class="brand-highlight">go</span></span>
+      </a>
+      <nav class="nav-links">
+        <details class="destination-menu">
+          <summary>DESTINATIONS</summary>
+          <div class="destination-dropdown">
+            <a href="mondstadt.php">MONDSTADT</a>
+            <a href="liyue.php">LIYUE</a>
+            <a href="inazuma.php">INAZUMA</a>
+            <a href="sumeru.php">SUMERU</a>
+            <a href="fontaine.php">FONTAINE</a>
+            <a href="natlan.php">NATLAN</a>
+            <a href="snezhnaya.php">SNEZHNAYA</a>
+          </div>
+        </details>
+        <a href="about.php">ABOUT US</a>
+        <a href="about.php#contact" class="btn-contact">CONTACT</a>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+    <section class="hero-destination hero-sumeru">
+        <div class="hero-content">
+            <p class="hero-tagline">"The City of Wisdom & Rainforest Retreat"</p>
+            <h1 class="hero-title">SUMERU</h1>
+            <p class="hero-duration">Duration: 3 days / 3 nights</p>
+        </div>
+
+        <div class="hero-price">
+            <strong class="price-amount">14,000 PHP</strong>
+            <span class="price-unit">per person</span>
+        </div>
+    </section>
+
+    <nav class="sub-nav" aria-label="Sumeru page sections">
+      <a href="#stops">YOUR STOPS</a>
+      <a href="#experiences">FEATURED EXPERIENCES</a>
+      <a href="#package">PACKAGE DETAILS</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+
+    <section class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+        <h2>ABOUT SUMERU</h2>
+        <p>
+           Sumeru, known as the Nation of Wisdom, is an extraordinary destination where lush
+            tropical rainforests meet the golden edges of a vast desert. Renowned for its towering treehouse architecture, world-famous scholarly halls, and vibrant spice bazaars, it offers travelers a dual-environment journey filled with discovery. From misty forest canopies to historic desert outposts, every corner of Sumeru invites curiosity and wonder.
+        </p>
+        </div>
+
+        <div class="about-gallery">
+            <figure class="photo-frame photo-back">
+                <div class="photo-inner">
+                    <img src="images/about-sumeru.jpg" alt="Nakurami Grand Shrine" loading="lazy">
+                </div>
+            </figure>
+            <figure class="photo-frame photo-front">
+                <div class="photo-inner">
+                    <img src="images/about-sumeru(1).jpg" alt="Sumeru Forest" loading="lazy">
+                </div>
+            </figure>
+        </div>
+    </div>
+    </section>
+
+    <section class="enjoy-section">
+    <!-- Decorative dashed travel path in background -->
+    <svg class="trail-bg" viewBox="0 0 1200 760" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- Top-right looping trail -->
+        <path d="M695 -10 C680 95, 760 155, 815 110 C855 75, 810 25, 785 75 C755 135, 835 190, 960 165 C1075 140, 1130 55, 1215 70"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-left looping trail -->
+        <path d="M-15 445 C75 405, 145 480, 105 535 C75 575, 25 535, 55 495 C90 450, 175 565, 235 515 C285 470, 225 385, 290 385 C340 385, 345 460, 325 510"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+        <!-- Bottom-right looping trail -->
+        <path d="M980 615 C1045 605, 1065 695, 1125 680 C1175 665, 1150 560, 1215 575"
+            stroke="rgba(255, 255, 255, 0.65)" stroke-width="3.5" stroke-dasharray="11 11" stroke-linecap="round" />
+    </svg>
+
+    <div class="enjoy-container">
+        <h2 class="enjoy-title">You’ll enjoy this trip if...</h2>
+
+        <div class="enjoy-grid">
+        <!-- Card 1 -->
+        <article class="note-card card-1">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/bx--book-open.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You're naturally curious and love learning</strong> about history, science, culture, and the mysteries of the world around you.
+            </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="note-card card-2">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/iconoven--rainforest.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You want to explore lush rainforests</strong> teeming with wildlife, hidden pathways, and breathtaking natural beauty.
+            </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="note-card card-3">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/bx--search-alt-2.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You are fascinated by ancient civilizations</strong> and dream of uncovering long-lost ruins and forgotten secrets.
+            </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="note-card card-4">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/material-symbols-light--toys-and-games.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You enjoy solving puzzles and following clues</strong> lead to hidden treasures and exciting discoveries.
+            </p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="note-card card-5">
+            <span class="tape" aria-hidden="true"></span>
+            <img src="images/iconoven--quiz-bulb.svg" class="note-icon" alt="" aria-hidden="true">
+            <p>
+            <strong>You prefer adventures that challenge your mind</strong> just as much as they inspire your sense of wonder.
+            </p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <section id="stops" class="stops-section">
+    <header class="stops-header">
+        <h2>YOUR STOPS</h2>
+        <p>A closer look at the destinations waiting for you on this expedition.</p>
+    </header>
+
+    <div class="stops-list">
+        <!-- Stop 1: Sumeru City Academy -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/sumeru-city-academy.jpg" alt="Sumeru City Academy" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>SUMERU CITY ACADEMY</h3>
+            <p>
+                Built gracefully around the spiraling branches of the Divine Tree, the Sumeru City Academy is an architectural marvel dedicated to knowledge and innovation. Walk along elevated wooden pathways, explore sunlit library courtyards, and admire the intricate emerald-and-gold detailing of the grand halls. Below the academy, lively market stalls fill the air with the rich aroma of exotic spices and freshly brewed herbal teas. Every visit to this living city of scholars inspires a deep appreciation for learning and craftsmanship.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 2: Gandharva Village -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/gandharva-village.png" alt="Gandharva Village" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>GANDHARVA VILLAGE</h3>
+            <p>
+                Tucked deep within the vibrant green canopies of Avidya Forest, Gandharva Ville offers a refreshing nature retreat surrounded by waterfalls and giant flora. Stroll across suspended rope bridges, listen to the soothing sounds of forest streams, and learn about local wildlife conservation from seasoned Forest Watchers. Whether you are admiring glowing evening blossoms or enjoying a quiet morning mist on the wooden decks, the village radiates peaceful charm. It is the ultimate sanctuary for travelers seeking to reconnect with nature.
+            </p>
+        </div>
+        </article>
+
+        <!-- Stop 3: Caravan Ribat -->
+        <article class="stop-row">
+        <div class="stop-media">
+            <img src="images/caravan-ribat.png" alt="Caravan Ribat" loading="lazy">
+        </div>
+        <div class="stop-text">
+            <h3>CARAVAN RIBAT</h3>
+            <p>
+                Standing proudly along the monumental Wall of Samiel, Caravan Ribat serves as a fascinating crossroads between Sumeru's lush woodland and its sweeping golden dunes. Explore the sturdy stone ramparts, watch merchant caravans arrive with rare desert goods, and take in dramatic contrasting views of green valleys on one side and endless sands on the other. The outpost's lively trade square offers travelers a unique taste of frontier hospitality and rich cultural exchange. Visiting Caravan Ribat captures the true spirit of adventure across two distinct worlds.
+            </p>
+        </div>
+        </article>
+    </div>
+    </section>
+
+    <section class="package-section">
+    <div class="package-container">
+        <!-- Inclusions & Exclusions Postage-Stamp Cards -->
+        <div id="experiences" class="stamp-grid">
+        <article class="stamp-card">
+            <h2>INCLUSIONS</h2>
+            <ul>
+            <li>
+                3 days / 3 nights eco-lodge and city inn accommodation in Sumeru with daily breakfast
+            </li>
+            <li>
+                Guided tours of Sumeru City Academy, Gandharva Village, and Caravan Ribat
+            </li>
+            <li>
+               Welcome rainforest spice and herbal refreshment platter
+            </li>
+            <li>
+                Forest Ranger trail permits and licensed Sumeru City branch tour guide
+            </li>
+            </ul>
+        </article>
+
+        <article class="stamp-card">
+            <h2>EXCLUSIONS</h2>
+            <ul>
+            <li>
+                Cross-border transit to and from Sumeru City
+            </li>
+            <li>
+                Lunches, dinners, and specialty beverages not listed in the itinerary
+            </li>
+            <li>
+                Personal souvenirs, Akademiya (grand university) archive guest passes, and travel insurance (required)
+            </li>
+            </ul>
+        </article>
+        </div>
+
+        <!-- Sample Itinerary -->
+        <div class="itinerary-block">
+        <h2 class="itinerary-title">SAMPLE ITINERARY</h2>
+
+        <div class="itinerary-grid">
+            <article class="itinerary-item day-1">
+            <h3>DAY 1 - Arrival at Sumeru City Academy</h3>
+            <p>
+                Check-in at Sumeru City Hub, orientation briefing, afternoon architectural tour of the Divine Tree (giant canopy tree) walkways and Sumeru City Academy halls, and welcome spice refreshment platter.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-2">
+            <h3>DAY 2 - Gandharva Ville Canopy Walk</h3>
+            <p>
+                Morning trek into Avidya Forest (tropical rainforest), guided canopy tour with local Forest Watchers in Gandharva Ville, and evening stargazing.
+            </p>
+            </article>
+
+            <article class="itinerary-item day-3">
+            <h3>DAY 3 - Caravan Ribat & Departure</h3>
+            <p>
+                Breakfast at the lodge, morning excursion to the Wall of Samiel (desert barrier wall) at Caravan Ribat where rainforest meets desert, afternoon souvenir market visit, and evening checkout.
+            </p>
+            </article>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Ready to Explore CTA Banner -->
+    <section id="package" class="booking-cta">
+    <div class="booking-container">
+        <h2 class="booking-title">READY TO EXPLORE SUMERU?</h2>
+
+        <div class="booking-card">
+        <div class="booking-details">
+            <p>Base price: <span>14,000 PHP per person</span></p>
+            <p>Duration: <span>3 days / 3 nights</span></p>
+            <p>Package code: <span>SUME-04</span></p>
+        </div>
+
+        <a href="#book" class="btn-book">BOOK NOW</a>
+        </div>
+    </div>
+
+    <!-- Torn paper edge transitioning into the navy FAQ section below -->
+    <img src="images/torn-divider.webp" alt="" class="torn-divider" aria-hidden="true" loading="lazy">
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section id="faqs" class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-list">
+        <details class="faq-item">
+            <summary>
+            <span>What should I wear for the Sumeru tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Lightweight, moisture-wicking long sleeves, breathable trousers, and closed-toe trail shoes to protect against rainforest humidity, insects, and desert sand near Caravan Ribat.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>What should I bring with me?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+                Bring your SUME-04 booking code, insect repellent, sunscreen, a wide-brimmed hat, a refillable canteen, and any personal allergy medications.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Is the tour suitable for families and children?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Yes, children love the elevated treehouse walkways of Sumeru City and Gandharva Ville, provided they stay close to guides along elevated forest bridges.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>How much walking is involved?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Moderate walking (around 3 hours daily) across spiral wooden ramps in Sumeru City, forest trails in Avidya Forest (tropical rainforest), and sand-packed paths at Caravan Ribat.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Can I explore on my own during the trip?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Yes. You have free afternoon time on Day 3 at the Sumeru City bazaar (open-air market) to shop for spices, textiles, and crafts before evening checkout.
+            </p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>
+            <span>Are there any rules or protocols I should follow during the tour?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+            <p>
+               Never wander off marked rainforest trails without a Forest Watcher guide, avoid touching unfamiliar glowing flora or fungi, and refrain from entering restricted Sumeru City Academy research archives without clearance.
+            </p>
+            </div>
+        </details>
+        </div>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Contact Info -->
+      <div class="footer-brand-col">
+        <a href="mondstadt.php" class="footer-logo">
+          <svg class="footer-brand-icon" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-forward-icon" x1="0" y1="0" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#83aae8" />
+                <stop offset="100%" stop-color="#0d3b73" />
+              </linearGradient>
+            </defs>
+            <path d="M2 4.5C2 2.6 4.1 1.5 5.7 2.5L22.5 13C24 13.9 24 16.1 22.5 17L5.7 27.5C4.1 28.5 2 27.4 2 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+            <path d="M18 4.5C18 2.6 20.1 1.5 21.7 2.5L38.5 13C40 13.9 40 16.1 38.5 17L21.7 27.5C20.1 28.5 18 27.4 18 25.5V4.5Z" fill="url(#footer-forward-icon)" />
+          </svg>
+          <span class="footer-brand-text">teyvat<span class="brand-highlight">go</span></span>
+        </a>
+
+        <div class="footer-contact">
+          <p>Tel : 09451236789</p>
+          <p>Email : teyvatgo@gmail.com</p>
+          <p>Address : West Wind Boulevard, Knights<br>Quarter, Mondstadt City, Teyvat 1001</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="footer-links-col">
+        <h3>DESTINATIONS</h3>
+        <ul>
+          <li><a href="mondstadt.php">MONDSTADT</a></li>
+          <li><a href="liyue.php">LIYUE</a></li>
+          <li><a href="inazuma.php">INAZUMA</a></li>
+          <li><a href="sumeru.php">SUMERU</a></li>
+          <li><a href="fontaine.php">FONTAINE</a></li>
+          <li><a href="natlan.php">NATLAN</a></li>
+          <li><a href="snezhnaya.php">SNEZHNAYA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company Links & Social Media -->
+      <div class="footer-social-col">
+        <ul class="footer-primary-links">
+            <li><a href="about.php">ABOUT US</a></li>
+            <li><a href="about.php#contact">CONTACT</a></li>
+        </ul>
+
+        <div class="footer-connect">
+          <h3>CONNECT WITH US</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Teyvat Go on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved | Teyvat Go</p>
+    </div>
+  </footer>
+</body>
+
+</html>
