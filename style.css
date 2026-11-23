@@ -1248,6 +1248,346 @@ main {
   transform: translateY(-2px);
 }
 
+/* Reservation Booking Modal */
+.booking-modal-open {
+  overflow: hidden;
+}
+
+.booking-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-modal.active {
+  display: flex;
+}
+
+.booking-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 20, 43, 0.72);
+}
+
+.booking-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(70rem, 96vw);
+  max-height: calc(100vh - 3rem);
+  display: grid;
+  grid-template-columns: 42% 58%;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+}
+
+.booking-modal-media {
+  position: relative;
+  min-height: 34rem;
+  background: #d7e9f5;
+}
+
+.booking-modal-media img {
+  width: 100%;
+  height: calc(100% - 9.25rem);
+  display: block;
+  object-fit: cover;
+}
+
+.booking-modal-summary {
+  min-height: 9.25rem;
+  background: #fff;
+  padding: 1.35rem 1.5rem;
+  color: var(--color-text-dark);
+}
+
+.booking-modal-summary h3 {
+  color: #1d4d87;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.85rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.booking-modal-summary p {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0.25rem 0;
+}
+
+.booking-modal-summary strong {
+  font-weight: 700;
+}
+
+.booking-modal-form {
+  background: #073f82;
+  color: var(--color-white);
+  padding: 1.7rem 2.5rem;
+  overflow-y: auto;
+}
+
+.booking-modal-form h2 {
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.booking-modal-section {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin: 1rem 0 0.65rem;
+}
+
+.booking-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem 1.25rem;
+}
+
+.booking-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.booking-modal-field label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.booking-modal-field input {
+  width: 100%;
+  height: 2.45rem;
+  border: none;
+  border-radius: 0;
+  padding: 0.65rem 0.75rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.88rem;
+  color: var(--color-text-dark);
+}
+
+.booking-modal-field input:focus-visible {
+  outline: 2px solid #7ee3c1;
+  outline-offset: 2px;
+}
+
+.booking-modal-total {
+  margin-top: 1rem;
+  min-height: 4.2rem;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  color: #111;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.booking-modal-total div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.booking-modal-total div strong {
+  font-size: 0.82rem;
+}
+
+.booking-modal-total div span {
+  color: #073f82;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.booking-modal-total > strong {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.25rem;
+}
+
+.booking-modal-terms {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+}
+
+.booking-modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.booking-modal-actions button {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.78rem 1.55rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.booking-modal-cancel {
+  color: #053264;
+  background: #c5defa;
+}
+
+.booking-modal-confirm {
+  color: #053264;
+  background: #75cda8;
+}
+
+/* Reservation Confirmation Dialog */
+.reservation-confirmation-open {
+  overflow: hidden;
+}
+
+.reservation-confirmation {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.reservation-confirmation.active {
+  display: flex;
+}
+
+.reservation-confirmation-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 21, 48, 0.62);
+}
+
+.reservation-confirmation-card {
+  position: relative;
+  z-index: 1;
+  width: min(42rem, calc(100vw - 3rem));
+  min-height: 17.5rem;
+  background: #ffffff;
+  border-radius: 0.35rem;
+  padding: 2.35rem 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 1.25rem 3.5rem rgba(0, 0, 0, 0.18);
+}
+
+.reservation-confirmation-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  color: #073f82;
+}
+
+.reservation-confirmation-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  color: #073f82;
+  flex: 0 0 auto;
+}
+
+.reservation-confirmation-heading h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.reservation-confirmation-card p {
+  margin: 1.35rem auto 1.75rem;
+  max-width: 34rem;
+  color: #62656a;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.reservation-confirmation-close {
+  width: 13rem;
+  min-height: 3.25rem;
+  border: none;
+  border-radius: 9999px;
+  background: #6f9ed7;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reservation-confirmation-close:hover {
+  background: #5d8dc8;
+}
+
+@media (max-width: 800px) {
+  .booking-modal {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .booking-modal-panel {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .booking-modal-media {
+    min-height: 16rem;
+  }
+
+  .booking-modal-media img {
+    height: 12rem;
+  }
+
+  .booking-modal-summary {
+    min-height: 7rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .reservation-confirmation-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .reservation-confirmation-heading {
+    flex-direction: column;
+  }
+
+  .reservation-confirmation-card p br {
+    display: none;
+  }
+
+  .booking-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-modal-form {
+    padding: 1.25rem 1.1rem;
+  }
+
+  .booking-modal-actions {
+    flex-direction: column;
+  }
+
+  .booking-modal-actions button {
+    width: 100%;
+  }
+}
+
 /* Carousel Pagination Dots */
 .trip-dots {
   display: flex;
@@ -1340,6 +1680,7 @@ main {
 }
 
 .form-group input,
+.form-group select,
 .form-group textarea {
   width: 100%;
   background-color: #ffffff;
@@ -1357,6 +1698,7 @@ main {
 }
 
 .form-group input:focus-visible,
+.form-group select:focus-visible,
 .form-group textarea:focus-visible {
   outline: 2px solid var(--color-accent-mint);
   outline-offset: 2px;
