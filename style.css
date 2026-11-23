@@ -1411,6 +1411,7 @@ main {
 .booking-modal-total > strong {
   font-family: 'Fredoka', sans-serif;
   font-size: 1.25rem;
+  color: var(--color-primary);
 }
 
 .booking-modal-terms {
