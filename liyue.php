@@ -41,6 +41,7 @@
           </div>
         </details>
         <a href="about.php">ABOUT US</a>
+        <a href="bookings.php">MY BOOKINGS</a>
         <a href="about.php#contact" class="btn-contact">CONTACT</a>
       </nav>
     </header>
