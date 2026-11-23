@@ -139,16 +139,18 @@ if (tripCard) {
     }
   }
 
-  // Event Type 1: click
+  // Event Type 1: Previous and next button clicks move through the package carousel
   prevBtn.addEventListener('click', showPrevTrip);
   nextBtn.addEventListener('click', showNextTrip);
 
+  // Dot clicks select a package directly by its position in the trips array
   dots.forEach((dot) => {
     dot.addEventListener('click', () => {
       renderTrip(Number(dot.dataset.index));
     });
   });
 
+  // Nation filter clicks update the active pill and render the matching package
   filterPills.forEach((pill) => {
     pill.addEventListener('click', filterTripsByNation);
   });
@@ -175,7 +177,7 @@ function resetJourneyFrame(event) {
   frame.style.zIndex = '';
 }
 
-// Event Types 2 & 3: mouseover and mouseout
+// Event Types 2 & 3: Mouseover straightens and lifts a frame; mouseout restores it
 journeyFrames.forEach((frame) => {
   frame.addEventListener('mouseover', highlightJourneyFrame);
   frame.addEventListener('mouseout', resetJourneyFrame);
@@ -207,17 +209,20 @@ if (contactForm && emailInput) {
     const value = emailInput.value.trim();
     const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
+    // Clear the feedback and border when the field is empty
     if (!value) {
       emailStatus.textContent = '';
       emailInput.style.borderColor = '';
       return;
     }
 
+    // Show success feedback and apply a green border for a valid email
     if (isValid) {
       emailStatus.textContent = 'Valid email address';
       emailStatus.style.color = '#1b7a3d';
       emailInput.style.borderColor = '#1b7a3d';
     } else {
+      // Show an example and apply a red border for an invalid email
       emailStatus.textContent = 'Please enter a valid email (e.g., traveler@gmail.com)';
       emailStatus.style.color = '#b42318';
       emailInput.style.borderColor = '#b42318';
@@ -239,7 +244,8 @@ if (contactForm && emailInput) {
     emailInput.style.borderColor = '';
   }
 
-  // Event Types 4 & 5: change and submit
+  // Event Type 4: A change to the email field runs format validation
   emailInput.addEventListener('change', validateEmailField);
+  // Event Type 5: Submission prevents navigation and displays a confirmation
   contactForm.addEventListener('submit', handleContactSubmit);
 }
