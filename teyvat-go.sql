@@ -57,11 +57,11 @@ CREATE TABLE inquiries (
 );
 
 INSERT INTO users (full_name, email, password_hash, role, assigned_nation) VALUES
-('Agency Director', 'director@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Director', 'All Nations'),
+('Agency Director(Alhaitham)', 'director@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Director', 'All Nations'),
 ('Jean Gunnhildr', 'mondstadt.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Mondstadt'),
-('Ningguang', 'liyue.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Liyue'),
+('Zhongli', 'liyue.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Liyue'),
 ('Yae Miko', 'inazuma.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Inazuma'),
-('Alhaitham', 'sumeru.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Sumeru'),
+('Nahida', 'sumeru.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Sumeru'),
 ('Neuvillette', 'fontaine.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Fontaine'),
 ('Mavuika', 'natlan.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Natlan'),
 ('Childe Tartaglia', 'snezhnaya.ops@teyvatgo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Staff', 'Snezhnaya');
