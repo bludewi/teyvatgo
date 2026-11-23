@@ -320,9 +320,125 @@ function createBookingModal() {
   // Traveler count changes recalculate the estimated package total
   travelersInput.addEventListener('input', updateBookingTotal);
 
+  const bookingDate = modal.querySelector('#booking-date');
+  const bookingPhone = modal.querySelector('#booking-phone');
+  const bookingFirstName = modal.querySelector('#booking-first-name');
+  const bookingLastName = modal.querySelector('#booking-last-name');
+  const bookingEmail = modal.querySelector('#booking-email');
+
+  // Set today's date as the earliest selectable travel date
+  const today = new Date();
+  const localToday = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, '0'),
+    String(today.getDate()).padStart(2, '0')
+  ].join('-');
+  bookingDate.min = localToday;
+
+  // Validate names when fields lose focus
+  [bookingFirstName, bookingLastName].forEach((nameInput) => {
+    nameInput.addEventListener('blur', () => {
+      const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
+      nameInput.setCustomValidity(
+        namePattern.test(nameInput.value.trim())
+          ? ''
+          : 'Please enter a valid name with at least 2 letters.'
+      );
+    });
+  });
+
+  // Validate email format when the field loses focus
+  bookingEmail.addEventListener('blur', () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    bookingEmail.setCustomValidity(
+      emailPattern.test(bookingEmail.value.trim())
+        ? ''
+        : 'Please enter a valid email address.'
+    );
+  });
+
+  // Accept 10 or 11 digits and reject letters or invalid phone lengths
+  bookingPhone.addEventListener('blur', () => {
+    const phoneDigits = bookingPhone.value.replace(/\D/g, '');
+    const phonePattern = /^[0-9+\s()-]+$/;
+    bookingPhone.setCustomValidity(
+      phonePattern.test(bookingPhone.value.trim()) &&
+      phoneDigits.length >= 10 &&
+      phoneDigits.length <= 11
+        ? ''
+        : 'Please enter a valid 10 or 11 digit phone number.'
+    );
+  });
+
+  // Reject past travel dates
+  bookingDate.addEventListener('change', () => {
+    bookingDate.setCustomValidity(
+      bookingDate.value && bookingDate.value >= localToday
+        ? ''
+        : 'Please select today or a future travel date.'
+    );
+  });
+
   // Submission closes the booking form and immediately opens the reservation confirmation card
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneDigits = bookingPhone.value.replace(/\D/g, '');
+    const phonePattern = /^[0-9+\s()-]+$/;
+    let invalidField = null;
+
+    // Revalidate names because submission must not rely only on blur events
+    if (!namePattern.test(bookingFirstName.value.trim())) {
+      bookingFirstName.setCustomValidity('Please enter a valid first name with at least 2 letters.');
+      if (!invalidField) invalidField = bookingFirstName;
+    } else {
+      bookingFirstName.setCustomValidity('');
+    }
+
+    if (!namePattern.test(bookingLastName.value.trim())) {
+      bookingLastName.setCustomValidity('Please enter a valid last name with at least 2 letters.');
+      if (!invalidField) invalidField = bookingLastName;
+    } else {
+      bookingLastName.setCustomValidity('');
+    }
+
+    // Revalidate email, phone, and travel date before confirmation
+    if (!emailPattern.test(bookingEmail.value.trim())) {
+      bookingEmail.setCustomValidity('Please enter a valid email address.');
+      if (!invalidField) invalidField = bookingEmail;
+    } else {
+      bookingEmail.setCustomValidity('');
+    }
+
+    if (!phonePattern.test(bookingPhone.value.trim()) || phoneDigits.length < 10 || phoneDigits.length > 11) {
+      bookingPhone.setCustomValidity('Please enter a valid 10 or 11 digit phone number.');
+      if (!invalidField) invalidField = bookingPhone;
+    } else {
+      bookingPhone.setCustomValidity('');
+    }
+
+    if (!bookingDate.value || bookingDate.value < localToday) {
+      bookingDate.setCustomValidity('Please select today or a future travel date.');
+      if (!invalidField) invalidField = bookingDate;
+    } else {
+      bookingDate.setCustomValidity('');
+    }
+
+    if (invalidField || !form.checkValidity()) {
+      if (invalidField) invalidField.reportValidity();
+      else form.reportValidity();
+      return;
+    }
+
+    // Require a final user decision before confirming or cancelling the reservation
+    const shouldConfirm = window.confirm(
+      'Confirm this reservation request? Select OK to confirm or Cancel to keep editing.'
+    );
+    if (!shouldConfirm) {
+      return;
+    }
 
     closeBookingModal();
     openReservationConfirmation();
@@ -347,6 +463,10 @@ function openBookingModal(nationKey) {
   modal.dataset.price = String(data.price);
   modal.querySelector('#booking-modal-estimated').textContent = `${data.code} × 1`;
   modal.querySelector('#booking-modal-total').textContent = `${data.price.toLocaleString('en-US')} PHP`;
+  modal.querySelector('#booking-travelers').value = '1';
+
+  // Clear custom validity messages before showing the form again
+  modal.querySelectorAll('input').forEach((input) => input.setCustomValidity(''));
 
   modal.classList.add('active');
   document.body.classList.add('booking-modal-open');
@@ -488,13 +608,7 @@ const contactForm = document.querySelector('.contact-form');
 const emailInput = document.getElementById('email');
 
 if (contactForm && emailInput) {
-  // Create visible status elements below email input and form
-  const emailStatus = document.createElement('small');
-  emailStatus.style.display = 'block';
-  emailStatus.style.marginTop = '6px';
-  emailStatus.style.fontWeight = '600';
-  emailInput.insertAdjacentElement('afterend', emailStatus);
-
+  // Create the visible success message shown only after valid form submission
   const formFeedback = document.createElement('p');
   formFeedback.style.marginTop = '16px';
   formFeedback.style.fontWeight = '700';
@@ -506,23 +620,15 @@ if (contactForm && emailInput) {
     const value = emailInput.value.trim();
     const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-    // Clear the feedback and border when the field is empty
     if (!value) {
-      emailStatus.textContent = '';
-      emailInput.style.borderColor = '';
+      emailInput.setCustomValidity('');
       return;
     }
 
-    // Show success feedback and apply a green border for a valid email
     if (isValid) {
-      emailStatus.textContent = 'Valid email address';
-      emailStatus.style.color = '#1b7a3d';
-      emailInput.style.borderColor = '#1b7a3d';
+      emailInput.setCustomValidity('');
     } else {
-      // Show an example and apply a red border for an invalid email
-      emailStatus.textContent = 'Please enter a valid email (e.g., traveler@gmail.com)';
-      emailStatus.style.color = '#b42318';
-      emailInput.style.borderColor = '#b42318';
+      emailInput.setCustomValidity('Please enter a valid email address.');
     }
   }
 
@@ -530,14 +636,69 @@ if (contactForm && emailInput) {
   function handleContactSubmit(event) {
     event.preventDefault();
 
-    const firstName = document.getElementById('first-name').value.trim();
-    const subject = document.getElementById('subject').value.trim();
+    // Collect contact fields so invalid values can be reported before submission
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+    const subjectInput = document.getElementById('subject');
+    const commentsInput = document.getElementById('comments');
+    const firstName = firstNameInput.value.trim();
+    const lastName = lastNameInput.value.trim();
+    const subject = subjectInput.value.trim();
+    const namePattern = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
+
+    let invalidField = null;
+
+    // Validate first name and focus the field when its value is invalid
+    if (!namePattern.test(firstName)) {
+      firstNameInput.setCustomValidity('Please enter a valid first name with at least 2 letters.');
+      invalidField = firstNameInput;
+    } else {
+      firstNameInput.setCustomValidity('');
+    }
+
+    // Validate last name and focus the field when its value is invalid
+    if (!namePattern.test(lastName)) {
+      lastNameInput.setCustomValidity('Please enter a valid last name with at least 2 letters.');
+      if (!invalidField) invalidField = lastNameInput;
+    } else {
+      lastNameInput.setCustomValidity('');
+    }
+
+    // Re-run email validation so submission cannot bypass the change event
+    validateEmailField();
+    if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+      emailInput.setCustomValidity('Please enter a valid email address.');
+      if (!invalidField) invalidField = emailInput;
+    } else {
+      emailInput.setCustomValidity('');
+    }
+
+    // Subject and questions must contain a selected package and actual text
+    if (!subject) {
+      subjectInput.setCustomValidity('Please select a package.');
+      if (!invalidField) invalidField = subjectInput;
+    } else {
+      subjectInput.setCustomValidity('');
+    }
+
+    if (!commentsInput.value.trim()) {
+      commentsInput.setCustomValidity('Please enter your question.');
+      if (!invalidField) invalidField = commentsInput;
+    } else {
+      commentsInput.setCustomValidity('');
+    }
+
+    // Stop submission and show the browser validation message for the first invalid field
+    if (invalidField || !contactForm.checkValidity()) {
+      if (invalidField) invalidField.reportValidity();
+      else contactForm.reportValidity();
+      return;
+    }
 
     formFeedback.textContent = `Thank you, ${firstName}! Your message regarding "${subject}" has been sent to Teyvat Go.`;
     formFeedback.style.color = '#053264';
 
     contactForm.reset();
-    emailStatus.textContent = '';
     emailInput.style.borderColor = '';
   }
 
